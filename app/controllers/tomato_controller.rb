@@ -1,10 +1,14 @@
 class TomatoController < ApplicationController
 
-  def home
-  	#render text: "ketchup!"
+  def home	
   end
 
   def new
-  	puts "where's the clock?"
+  	minutes = 25
+  	seconds = minutes * 60
+  	start_time = Time.now
+  	end_time = start_time + seconds
+  	puts start_time
+  	puts end_time
   end
 end

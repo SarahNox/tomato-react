@@ -1,10 +1,66 @@
 <div class="center jumbotron">
-	<h1>Tomato-Clock</h1>
+  <h1>Tomato-Clock</h1>
 <h2>
   When its ready, it should display a pomodoro-clock
 </h2>
+<html>
+<head>
+    <script type="text/javascript">  
 
-  <%= link_to "Start", '#', class: "btn btn-lg btn-primary" %>
-  <%= link_to "Stop", '#', class: "btn btn-lg btn-primary" %>
-</div>
+    var isTimerOn = false;
+    var time = 1*60 + 5;
+    var interval;
+// window.onload = function() {
+//     countdown('countdown');
+//     }
+function countdown() {
+    interval = setInterval(function() {
+        var el = document.getElementById("countdown");
+        if(time == 0) {
+            el.innerHTML = "Tomatinatime!";    
+            clearInterval(interval);
+            return;
+        }
+        var minutes = Math.floor( time / 60 );
+        if (minutes < 10) minutes = "0" + minutes;
+        var seconds = time % 60;
+        if (seconds < 10) seconds = "0" + seconds; 
+        var text = minutes + ':' + seconds;
+        el.innerHTML = text;
+        time--;
+    }, 1000);
+}
+
+   // function stop() {
+   //  isTimerOn = false;
+   //  clearTimeout(interval);
+   // }
+
+
+   function toggle() {
+    if (!isTimerOn){
+      isTimerOn = true;
+       countdown();
+    } else {
+      isTimerOn = false;
+      clearInterval(interval);
+    }
+   }
+
+   // if -> countdown running -> button "Pause"
+   //     document.getElementById("startPause").innerHTML = "Pause"
+   // if -> countdown paused -> button "Resume"
+   //     document.getElementById("startPause").innerHTML = "Resume"
+
+
+    </script>
+</head>
+<body>
+<div id='countdown'></div>
+<button id="toggle" onclick="toggle()">Start</button>
+<button id="stop" onclick="stop()">Stop</button>
+</body>
+</html>
+
+
 
