@@ -1,10 +1,8 @@
 class TomatoController < ApplicationController
 
-  def home
-  	#render text: "ketchup!"
+  def home	
   end
 
   def new
-  	puts "where's the clock?"
   end
 end

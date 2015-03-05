@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def tomato
-  	render text: "Sarah is trying to code a tomato-clock!"
+    render text: "Sarah is trying to code a tomato-clock!"
+   #  tomato = Time.now  
+   #  puts tomato.strftime("%H:%M:%S") 
   end
+
 end

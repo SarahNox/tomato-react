@@ -1,10 +1,2 @@
-require 'timer'
-
-class Timer
- def self.time(&block)
- 
- end
- 
-
- 
+class Tomato_timer < ActiveRecord::Base
 end
