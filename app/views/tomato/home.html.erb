@@ -28,12 +28,14 @@ function countdown() {
     }, 1000);
 }
 
+
    function stop() {
     isTimerOn = false;
     clearInterval(interval); 
     document.getElementById("toggle").innerHTML = "Start";
     alert("you crashed the pomodoro");
    }
+
 
    function toggle() {
     if (!isTimerOn){
