@@ -8,13 +8,15 @@
     <script type="text/javascript">  
 
     var isTimerOn = false;
-    var time = 1*60 + 5;
+    var time = 0*60 + 5;
     var interval;
+    var pause = 5*60 +0;
 function countdown() {
     interval = setInterval(function() {
         var el = document.getElementById("countdown");
         if(time == 0) {
-            el.innerHTML = "Tomatinatime!";    
+            el.innerHTML = "Tomatinatime!"; 
+            // alert("Tomatinatime");   
             clearInterval(interval);
             return;
         }
@@ -34,6 +36,7 @@ function countdown() {
     clearInterval(interval); 
     document.getElementById("toggle").innerHTML = "Start";
     alert("you crashed the pomodoro");
+    pause();
    }
 
 
@@ -49,6 +52,23 @@ function countdown() {
     }
    }
 
+//   function pause() {
+//     tomato = setInterval(function() {
+//         var to = document.getElementById("countdown");
+//         if(pause == 0) {
+//             to.innerHTML = "time to start again!";    
+//             clearInterval(tomato);
+//             return;
+//         }
+//         var minutes = Math.floor( time / 60 );
+//         if (minutes < 10) minutes = "0" + minutes;
+//         var seconds = time % 60;
+//         if (seconds < 10) seconds = "0" + seconds; 
+//         var text = minutes + ':' + seconds;
+//         to.innerHTML = text;
+//         pause--;
+//     }, 1000);
+// }
 
     </script>
 </head>
