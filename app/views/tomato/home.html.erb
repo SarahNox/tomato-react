@@ -5,7 +5,7 @@
 </h2>
 <html>
 <head>
-    <script type="text/javascript">  
+    <script type="text/javascript">
 
     var isTimerOn = false;
     var time = 1*60 + 5;
@@ -14,14 +14,14 @@ function countdown() {
     interval = setInterval(function() {
         var el = document.getElementById("countdown");
         if(time == 0) {
-            el.innerHTML = "Tomatinatime!";    
+            el.innerHTML = "Tomatinatime!";
             clearInterval(interval);
             return;
         }
         var minutes = Math.floor( time / 60 );
         if (minutes < 10) minutes = "0" + minutes;
         var seconds = time % 60;
-        if (seconds < 10) seconds = "0" + seconds; 
+        if (seconds < 10) seconds = "0" + seconds;
         var text = minutes + ':' + seconds;
         el.innerHTML = text;
         time--;
@@ -30,7 +30,7 @@ function countdown() {
 
    function stop() {
     isTimerOn = false;
-    clearInterval(interval); 
+    clearInterval(interval);
     document.getElementById("toggle").innerHTML = "Start";
     alert("you crashed the pomodoro");
    }
@@ -46,7 +46,6 @@ function countdown() {
       document.getElementById("toggle").innerHTML = "Resume";
     }
    }
-
 
     </script>
 </head>
