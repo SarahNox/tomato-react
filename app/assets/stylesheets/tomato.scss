@@ -7,23 +7,53 @@
 
 
 body {
-  padding-top: 60px;
+    padding-top: 60px;
+    background-color: #FFFFFF;
 }
 
 section {
-  overflow: auto;
+    overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
+    background-color: #F0F0D8;
+    font-style: italic;
 }
 
 .center h1 {
-  margin-bottom: 10px;
-  margin-top: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: darkred; 
+    font-size: 70px;
+    font-weight: bold;
+    text-decoration: underline;
+    letter-spacing: 3px;
+}
+
+.center h2 {
+    margin-bottom: 10px;
+	margin-top: 10px;
+	color: #009933;
+    font-size: 15px;
+}
+
+div {
+    margin-left: 30px;
+    margin-right: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+}
+
+#countdown {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
