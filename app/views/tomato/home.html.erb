@@ -1,67 +1,70 @@
 <div class="center jumbotron">
   <h1>Tomato-Clock</h1>
-<h2>
-  When its ready, it should display a pomodoro-clock
-</h2>
+  <h2>
+    When its ready, it should display a pomodoro-clock
+  </h2>
 
-    <script type="text/javascript">
-var isTimerOn = false;
-var tomato = 2; 
-var time = tomato;
-var interval;
+  <script type="text/javascript">
+  var isTimerOn = false;
+  var tomatoTime = 2; 
+  var pauseTime = 5;
+  var time = tomatoTime;
+  var interval;
+  
 
   function countdown() {
     interval = setInterval(function() {
-        if(time == 0) {
-            end();
-            return;
-        }
-        updateTimerDisplay(time);
-        time--;
+      if(time == 0) {
+        end();
+        return;
+      }
+      updateTimerDisplay(time);
+      time--;
     }, 1000);
-}
+  }
 
-function end() {
-  document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
-  document.getElementById("toggle").innerHTML = "Start";
-            clearInterval(interval);
-            time = tomato;
-            setInterval(updateTimerDisplay, 1000);
-}
+  function end() {
+    isTimerOn = false;
+    document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
+    document.getElementById("toggle").innerHTML = "Start";
+    clearInterval(interval);
+    time = pauseTime;
+    setInterval(updateTimerDisplay, 1000);
+  }
 
   function stop() {
     isTimerOn = false;
     clearInterval(interval);
     document.getElementById("toggle").innerHTML = "Start";
-    time = tomato; 
+    time = tomatoTime; 
     updateTimerDisplay();
-   };
+  };
   
   function updateTimerDisplay() {
-        var el = document.getElementById("countdown");
-        var minutes = Math.floor( time / 60 );
-        if (minutes < 10) minutes = "0" + minutes;
-        var seconds = time % 60;
-        if (seconds < 10) seconds = "0" + seconds;
-        var text = minutes + ':' + seconds;
-        el.innerHTML = text;
+    var el = document.getElementById("countdown");
+    var minutes = Math.floor( time / 60 );
+    if (minutes < 10) minutes = "0" + minutes;
+    var seconds = time % 60;
+    if (seconds < 10) seconds = "0" + seconds;
+    var text = minutes + ':' + seconds;
+    el.innerHTML = text;
   };
-   
+
   function toggle() {
     if (!isTimerOn){
       isTimerOn = true;
       countdown();
       document.getElementById("toggle").innerHTML = "Pause";
-  } else {
+    } else {
       isTimerOn = false;
       clearInterval(interval);
       document.getElementById("toggle").innerHTML = "Resume";
     }
-   }
-    </script>
-<div id='countdown'>Pomodoro</div>
-<button id="toggle" onclick="toggle()">Start</button>
-<button id="stop" onclick="stop()">Stop</button>
+  }
+  </script>
+  <div id='countdown'>Pomodoro</div>
+  <button id="toggle" onclick="toggle()">Start</button>
+  <button id="stop" onclick="stop()">Stop</button>
 
 
 
