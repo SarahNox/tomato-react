@@ -3,37 +3,42 @@
 <h2>
   When its ready, it should display a pomodoro-clock
 </h2>
-<html>
-<head>
-    <script type="text/javascript">
 
-    var isTimerOn = false;
-    var time = 1*60 + 5;
-    var interval;
-function countdown() {
+    <script type="text/javascript">
+var isTimerOn = false;
+var time = 0*60 + 5;
+var interval;
+
+  function countdown() {
     interval = setInterval(function() {
-        var el = document.getElementById("countdown");
         if(time == 0) {
-            el.innerHTML = "Tomatinatime!";
+            document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
             clearInterval(interval);
             return;
         }
+        updateTimerDisplay(time);
+        time--;
+    }, 1000);
+}
+  function stop() {
+    isTimerOn = false;
+    clearInterval(interval);
+    document.getElementById("toggle").innerHTML = "Start";
+    time = 0*60 + 5; 
+    updateTimerDisplay(time);
+   };
+  
+  function updateTimerDisplay(time) {
+        var el = document.getElementById("countdown");
         var minutes = Math.floor( time / 60 );
         if (minutes < 10) minutes = "0" + minutes;
         var seconds = time % 60;
         if (seconds < 10) seconds = "0" + seconds;
         var text = minutes + ':' + seconds;
         el.innerHTML = text;
-        time--;
-    }, 1000);
-}
-   function stop() {
-    isTimerOn = false;
-    clearInterval(interval);
-    document.getElementById("toggle").innerHTML = "Start";
-    alert("you crashed the pomodoro");
-   }
-   function toggle() {
+  };
+   
+  function toggle() {
     if (!isTimerOn){
       isTimerOn = true;
       countdown();
@@ -44,15 +49,12 @@ function countdown() {
       document.getElementById("toggle").innerHTML = "Resume";
     }
    }
-
     </script>
-</head>
-<body>
-<div id='countdown'></div>
+<div id='countdown'>Pomodoro</div>
 <button id="toggle" onclick="toggle()">Start</button>
 <button id="stop" onclick="stop()">Stop</button>
-</body>
-</html>
+
+
 
 
 
