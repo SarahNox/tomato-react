@@ -10,12 +10,17 @@
   var pauseTime = 3;
   var time = tomatoTime;
   var interval;
+  var isTomatoOn = true;
   
 
   function countdown() {
     interval = setInterval(function() {
       if(time == 0) {
-        end();
+        if(isTomatoOn) { 
+          end();
+        } else {
+          stop();
+        }
         return;
       }
       updateTimerDisplay(time);
@@ -24,32 +29,22 @@
   }
 
   function end() {
+    isTomatoOn = false;
     isTimerOn = false;
     document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
     document.getElementById("toggle").innerHTML = ":-)";
     clearInterval(interval);
     time = pauseTime;
     setInterval(updateTimerDisplay, 2000);
-    pause();
-  }
-
-  function pause() {
-    interval = setInterval(function() {
-      if(time == 0) {
-        stop();
-        alert("Pause is over!"); 
-        document.getElementById("toggle").innerHTML = "Start";
-        return;
-      }
-      updateTimerDisplay(time);
-      time--;
-    }, 1000);
+    countdown();
   }
 
   function stop() {
+    isTomatoOn = true;
     isTimerOn = false;
     clearInterval(interval);
     document.getElementById("toggle").innerHTML = "Start";
+    alert("Pause is over!"); 
     time = tomatoTime; 
     updateTimerDisplay();
   }
