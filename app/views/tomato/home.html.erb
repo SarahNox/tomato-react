@@ -6,8 +6,8 @@
 
   <script type="text/javascript">
   var isTimerOn = false;
-  var tomatoTime = 2; 
-  var pauseTime = 5;
+  var tomatoTime = 5; 
+  var pauseTime = 3;
   var time = tomatoTime;
   var interval;
   
@@ -20,16 +20,30 @@
       }
       updateTimerDisplay(time);
       time--;
-    }, 1000);
+    }, 1000); 
   }
 
   function end() {
     isTimerOn = false;
     document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
-    document.getElementById("toggle").innerHTML = "Start";
+    document.getElementById("toggle").innerHTML = ":-)";
     clearInterval(interval);
     time = pauseTime;
-    setInterval(updateTimerDisplay, 1000);
+    setInterval(updateTimerDisplay, 2000);
+    pause();
+  }
+
+  function pause() {
+    interval = setInterval(function() {
+      if(time == 0) {
+        stop();
+        alert("Pause is over!"); 
+        document.getElementById("toggle").innerHTML = "Start";
+        return;
+      }
+      updateTimerDisplay(time);
+      time--;
+    }, 1000);
   }
 
   function stop() {
@@ -38,8 +52,8 @@
     document.getElementById("toggle").innerHTML = "Start";
     time = tomatoTime; 
     updateTimerDisplay();
-  };
-  
+  }
+
   function updateTimerDisplay() {
     var el = document.getElementById("countdown");
     var minutes = Math.floor( time / 60 );
@@ -48,7 +62,7 @@
     if (seconds < 10) seconds = "0" + seconds;
     var text = minutes + ':' + seconds;
     el.innerHTML = text;
-  };
+  }
 
   function toggle() {
     if (!isTimerOn){
