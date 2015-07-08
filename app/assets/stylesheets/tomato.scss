@@ -23,6 +23,11 @@ textarea {
     text-align: center;
     background-color: #F0F0D8;
     font-style: italic;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
 }
 
 .center h1 {
@@ -42,18 +47,14 @@ textarea {
     font-size: 15px;
 }
 
-div {
-    margin-left: 30px;
-    margin-right: 30px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 25px;
-}
-
 #countdown {
     width: 150px;
     margin: auto;
     margin-bottom: 50px;
     margin-top: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
 }
+
 

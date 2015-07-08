@@ -3,6 +3,6 @@ class TomatoController < ApplicationController
   def home	
   end
 
-  def new
+  def data
   end
 end
