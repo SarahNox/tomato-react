@@ -45,5 +45,6 @@ group :development, :test do
   gem 'spring'
 
   gem 'kaminari'
+  #gem 'ajax'
 end
 

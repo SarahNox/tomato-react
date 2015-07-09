@@ -99,4 +99,52 @@ function count() {
   i +=1;
   document.getElementById("counting").value = i;
   date();
+  var i = document.cookie;
 }
+
+// function cookie(pomodoro, date) {
+
+// }
+
+$(function (){
+
+  var pomodoros = $('#pomodoros');
+  var counting = $('#counting');
+  var date = $('#date');
+
+
+  function addPomodoro(pomodoro) {
+      $.pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
+  }
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: '/pomodoros',
+  //   success : function(pomodoros) {
+  //     $.each(pomodoros, function(counting, date) {
+  //       addPomodoro(pomodoro); 
+  //     });
+  //   },
+  //   error: function() {
+  //     alert('error loading pomodoros');
+  //   }
+  // });
+
+  var pomodoro = {
+    counting: counting.val(),
+    date: date.val(),
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: '/pomodoros',
+    data: pomodoro,
+    success : function(newPomodoro) {
+        addPomodoro(newPomodoro);
+      },
+    error: function() {
+      alert('error saving pomodoros');
+    }
+  });
+
+});
