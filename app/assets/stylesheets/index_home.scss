@@ -16,7 +16,7 @@ body {
     margin-right: 30px;
     border-style: solid;
     border-width: 1px;
-    border-radius: 50px;
+    border-radius: 25px;
 }
 
 section {
@@ -27,34 +27,16 @@ textarea {
     resize: vertical;
 }
 
-.center h1 {
-    margin-bottom: 50px;
-    margin-top: 50px;
-    color: darkred; 
-    font-size: 70px;
-    font-weight: bold;
-    text-decoration: underline;
-    letter-spacing: 3px;
+table th, td {
+    padding: 5px;
 }
 
-.center h2 {
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: #009933;
-    font-size: 15px;
+iframe {
+    border-style: none;
+    height: 350px;
 }
 
-#countdown {
-    width: 150px;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 25px;
+.pomodoros body {
+    padding-top: 60px;
+    background-color: #FFFFFF;
 }
-
-p {
-    margin-top: 25px;
-}
-

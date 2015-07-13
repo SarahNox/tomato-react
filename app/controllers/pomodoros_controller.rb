@@ -9,6 +9,7 @@ class PomodorosController < ApplicationController
 
 	def index
 		@pomodoros = Pomodoro.last(10)
+		render :layout => false
 	end
 
 	def show
