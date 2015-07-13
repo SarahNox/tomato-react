@@ -1,7 +1,9 @@
 require 'test_helper'
 
-class PomodorosControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class TomatoControllerTest < ActionController::TestCase
+  test "should get home" do
+    get :home
+    assert_response :success
+  end
+
 end

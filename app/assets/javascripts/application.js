@@ -99,12 +99,7 @@ function count() {
   i +=1;
   document.getElementById("counting").value = i;
   date();
-  var i = document.cookie;
 }
-
-// function cookie(pomodoro, date) {
-
-// }
 
 $(function (){
 
@@ -114,7 +109,7 @@ $(function (){
 
 
   function addPomodoro(pomodoro) {
-      $.pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
+      pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
   }
 
   // $.ajax({

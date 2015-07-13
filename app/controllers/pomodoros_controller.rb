@@ -6,4 +6,13 @@ class PomodorosController < ApplicationController
 		p.save
 		render text: "Pomodoro saved"
 	end
+
+	def index
+		@pomodoros = Pomodoro.last(10)
+	end
+
+	def show
+		@pomodoro = Pomodoro.find(params[:id])
+	end
+
 end

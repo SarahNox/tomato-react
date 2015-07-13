@@ -1,0 +1,16 @@
+<h1> Pomodoro </h1>
+
+<table>
+	<tr>
+		<th> Pomodoro </th>
+		<th> Date </th>
+	</tr>
+
+<% @pomodoros.each do |pomodoro| %>
+	<tr>
+	    <td><%= pomodoro.id %></td>
+	    <td><%= pomodoro.created_at %></td>
+	</tr>
+<% end %>
+</table>
+

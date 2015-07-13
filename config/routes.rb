@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
  root 'application#tomato'
  get 'tomato/home'
- get 'tomato/data'
  resources :pomodoros
 
   # The priority is based upon order of creation: first created -> highest priority.
