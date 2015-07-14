@@ -9,7 +9,8 @@
 <% @pomodoros.each do |pomodoro| %>
 	<tr>
 	    <td><%= pomodoro.id %></td>
-	    <td><%= pomodoro.created_at.to_s(:short) %></td>
+	    <td><%= pomodoro.created_at.strftime('%F %T') %></td>
+	    <!-- to_s(:short) -->
 	</tr>
 <% end %>
 </table>

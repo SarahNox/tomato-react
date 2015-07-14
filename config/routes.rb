@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  get 'tomato/home'
  resources :pomodoros
  get 'tomato/history'
+ get 'pomodoros/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

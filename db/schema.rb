@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708071846) do
+ActiveRecord::Schema.define(version: 20150714115125) do
 
   create_table "pomodoros", force: :cascade do |t|
     t.datetime "created_at", null: false

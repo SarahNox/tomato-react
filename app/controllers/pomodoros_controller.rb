@@ -21,4 +21,8 @@ class PomodorosController < ApplicationController
 		render :layout => false
 	end
 
+	def new
+		render :layout => false
+	end
+
 end

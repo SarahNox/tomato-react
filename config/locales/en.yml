@@ -20,6 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  time:
-  formats:
-  short: "arrrround %H'ish"
+	time: 'Berlin'
+		formats:
+			short: "arrrround %H'ish"

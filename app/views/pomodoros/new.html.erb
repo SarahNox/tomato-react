@@ -1,0 +1,28 @@
+<h1> save Pomodoro </h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save Pomodoro</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <body class="pomodoros">
+    <div class="container">
+      <div class="row">
+        <p> Project </p>
+        <input id = "project" type = "text" />
+        <p> Issue </p>
+        <input id = "issue" type = "text" />
+        <p> </p>
+
+        <button id="save" onclick="save()">Save</button>
+        <button id="redirect_to" onclick="redirect_to()">Home</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
