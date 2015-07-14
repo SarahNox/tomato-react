@@ -49,6 +49,7 @@ function end() {
   setInterval(updateTimerDisplay, 2000);
   countdown();
   count();
+  setTimeout(refresh, 5000);
 }
 
 function stop() {
@@ -101,6 +102,12 @@ function count() {
   date();
 }
 
+function refresh()
+{
+  iframe = document.getElementById("http://localhost:3000/pomodoros");
+  location.reload();
+}
+
 $(function (){
 
   var pomodoros = $('#pomodoros');
@@ -125,15 +132,15 @@ $(function (){
   //   }
   // });
 
-  var pomodoro = {
-    counting: counting.val(),
-    date: date.val(),
-  };
+  // var pomodoro = {
+  //   counting: counting.val(),
+  //   date: date.val(),
+  // };
 
   $.ajax({
     type: 'POST',
     url: '/pomodoros',
-    data: pomodoro,
+    data: pomodoros,
     success : function(newPomodoro) {
         addPomodoro(newPomodoro);
       },

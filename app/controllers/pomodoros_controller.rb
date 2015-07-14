@@ -13,7 +13,12 @@ class PomodorosController < ApplicationController
 	end
 
 	def show
-		@pomodoro = Pomodoro.find(params[:id])
+		@pomodoros = Pomodoro.all
+	end
+
+	def history
+		@pomodoros = Pomodoro.all
+		render :layout => false
 	end
 
 end

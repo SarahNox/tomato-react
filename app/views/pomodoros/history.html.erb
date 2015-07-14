@@ -3,13 +3,13 @@
 <table>
 	<tr>
 		<th> Pomodoro </th>
-		<th> Date / Time </th>
+		<th> Date </th>
 	</tr>
 
 <% @pomodoros.each do |pomodoro| %>
 	<tr>
 	    <td><%= pomodoro.id %></td>
-	    <td><%= pomodoro.created_at.to_s(:short) %></td>
+	    <td><%= pomodoro.created_at %></td>
 	</tr>
 <% end %>
 </table>

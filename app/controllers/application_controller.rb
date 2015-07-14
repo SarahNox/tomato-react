@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def tomato
-    render text: "Here I'll display the Pomodoro-History!"
+    render text: "display history"
   end
 
 end
