@@ -9,8 +9,7 @@
 <% @pomodoros.each do |pomodoro| %>
 	<tr>
 	    <td><%= pomodoro.id %></td>
-	    <td><%= pomodoro.created_at.strftime('%F %T') %></td>
-	    <!-- to_s(:short) -->
+	    <td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
 	</tr>
 <% end %>
 </table>

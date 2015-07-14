@@ -60,6 +60,7 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
+  window.location.replace("http://localhost:3000/pomodoros/new");
 }
 
 function updateTimerDisplay() {

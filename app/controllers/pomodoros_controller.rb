@@ -12,10 +12,6 @@ class PomodorosController < ApplicationController
 		render :layout => false
 	end
 
-	def show
-		@pomodoros = Pomodoro.all
-	end
-
 	def history
 		@pomodoros = Pomodoro.all
 		render :layout => false
