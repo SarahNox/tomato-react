@@ -85,6 +85,10 @@ function toggle() {
   }
 }
 
+function back() {
+  window.location.replace("http://localhost:3000/tomato/home");
+}
+
 function date() {
   var date = new Date();
   var d  = date.getDate();

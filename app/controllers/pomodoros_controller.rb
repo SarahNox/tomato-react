@@ -2,12 +2,12 @@ class PomodorosController < ApplicationController
 		skip_before_action :verify_authenticity_token
 
 	def index
-		@pomodoros = Pomodoro.last(10).reverse
+		@pomodoros = Pomodoro.page(params[:page]).per(20).order("created_at DESC")
 		render :layout => false
 	end
 
 	def show
-		@pomodoros = Pomodoro.all.reverse
+        @pomodoros = Pomodoro.all.reverse
 		render :layout => false
 	end
 
