@@ -1,28 +1,24 @@
-<h1> save Pomodoro </h1>
-
+<h1> Save Pomodoro </h1>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Save Pomodoro</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <body class="pomodoros">
-    <div class="container">
-      <div class="row">
-        <p> Project </p>
-        <input id = "project" type = "text" />
-        <p> Issue </p>
-        <input id = "issue" type = "text" />
-        <p> </p>
+<body class="pomodoros">
 
-        <button id="save" onclick="save()">Save</button>
-        <button id="redirect_to" onclick="redirect_to()">Home</button>
-      </div>
-    </div>
+  <%= form_for(@pomodoro) do |f| %>
+  <div class="field">
+    <p> Project </p>
+    <%= f.text_area :project %>
+    <p> Issue </p>
+    <%= f.text_area :issue %>
   </div>
+  <p> </p>
+  <%= f.submit "Save" %>
+  <% end %>
+</div>
 </div>
 </body>
 </html>

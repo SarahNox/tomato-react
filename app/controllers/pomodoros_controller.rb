@@ -1,24 +1,36 @@
 class PomodorosController < ApplicationController
-	skip_before_action :verify_authenticity_token
+		skip_before_action :verify_authenticity_token
 
-	def create
+	def index
+		@pomodoros = Pomodoro.last(10).reverse
+		render :layout => false
+	end
+
+	def show
+		@pomodoros = Pomodoro.all.reverse
+		render :layout => false
+	end
+
+	def new
+		@pomodoro = Pomodoro.new
+		render :layout => false
+	end
+
+	def save
 		p = Pomodoro.new
 		p.save
 		render text: "Pomodoro saved"
 	end
 
-	def index
-		@pomodoros = Pomodoro.last(10)
-		render :layout => false
-	end
+	def create
+		p = Pomodoro.new(pomodoro_params)
+		p.save
+		redirect_to tomato_home_path
+	end	
 
-	def history
-		@pomodoros = Pomodoro.all
-		render :layout => false
-	end
-
-	def new
-		render :layout => false
-	end
-
+private
+    def pomodoro_params
+      params.require(:pomodoro).permit(:project, :issue)
+    end
 end
+

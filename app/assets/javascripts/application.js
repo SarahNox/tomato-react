@@ -49,7 +49,7 @@ function end() {
   setInterval(updateTimerDisplay, 2000);
   countdown();
   count();
-  setTimeout(refresh, 5000);
+  // setTimeout(refresh, 5000);
 }
 
 function stop() {
@@ -109,16 +109,17 @@ function refresh()
   location.reload();
 }
 
-$(function (){
 
-  var pomodoros = $('#pomodoros');
-  var counting = $('#counting');
-  var date = $('#date');
+// $(function (){
+
+//   var pomodoros = $('#pomodoros');
+//   var counting = $('#counting');
+//   var date = $('#date');
 
 
-  function addPomodoro(pomodoro) {
-      pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
-  }
+//   function addPomodoro(pomodoro) {
+//       pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
+//   }
 
   // $.ajax({
   //   type: 'GET',
@@ -138,16 +139,16 @@ $(function (){
   //   date: date.val(),
   // };
 
-  $.ajax({
-    type: 'POST',
-    url: '/pomodoros',
-    data: pomodoros,
-    success : function(newPomodoro) {
-        addPomodoro(newPomodoro);
-      },
-    error: function() {
-      alert('error saving pomodoros');
-    }
-  });
+//   $.ajax({
+//     type: 'POST',
+//     url: '/pomodoros',
+//     data: pomodoros,
+//     success : function(newPomodoro) {
+//         addPomodoro(newPomodoro);
+//       },
+//     error: function() {
+//       alert('error saving pomodoros');
+//     }
+//   });
 
-});
+// });

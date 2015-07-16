@@ -1,16 +1,32 @@
-<h1> Pomodoros </h1>
+<h1> Last 10 Pomodoros </h1>
+<!DOCTYPE html>
+<html>
+<head>
 
-<table>
-	<tr>
-		<th> Pomodoro </th>
-		<th> Date / Time </th>
-	</tr>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body class="pomodoros">
 
-<% @pomodoros.each do |pomodoro| %>
-	<tr>
-	    <td><%= pomodoro.id %></td>
-	    <td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
-	</tr>
-<% end %>
-</table>
+	<table>
+		<tr>
+			<th> Pomodoro </th>
+			<th> Project </th>
+			<th> Issue </th>
+			<th> Date / Time </th>
+		</tr>
 
+		<% @pomodoros.each do |pomodoro| %>
+		<tr>
+			<td><%= pomodoro.id %></td>
+			<td><%= pomodoro.project %></td>
+			<td><%= pomodoro.issue %></td>
+			<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
+		</tr>
+		<% end %>
+	</table>
+
+</div>
+</div>
+</body>
+</html>
