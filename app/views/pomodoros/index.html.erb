@@ -7,24 +7,23 @@
 	<%= csrf_meta_tags %>
 </head>
 <body class="pomodoros">
+	<%= paginate @pomodoros %>
+	<table>
+		<tr>
+			<th> Pomodoro </th>
+			<th> Project </th>
+			<th> Issue </th>
+			<th> Date / Time </th>
+		</tr>
 
-<%= paginate @pomodoros %>
-			<table>
-				<tr>
-					<th> Pomodoro </th>
-					<th> Project </th>
-					<th> Issue </th>
-					<th> Date / Time </th>
-				</tr>
-
-				<% @pomodoros.each do |pomodoro| %>
-				<tr>
-					<td><%= pomodoro.id %></td>
-					<td><%= pomodoro.project %></td>
-					<td><%= pomodoro.issue %></td>
-					<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
-				</tr>
-				<% end %>
-			</table>
+		<% @pomodoros.each do |pomodoro| %>
+		<tr>
+			<td><%= pomodoro.id %></td>
+			<td><%= pomodoro.project %></td>
+			<td><%= pomodoro.issue %></td>
+			<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
+		</tr>
+		<% end %>
+	</table>
 </body>
 </html>

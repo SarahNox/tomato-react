@@ -2,12 +2,12 @@ class PomodorosController < ApplicationController
 		skip_before_action :verify_authenticity_token
 
 	def index
-		@pomodoros = Pomodoro.page(params[:page]).per(20).order("created_at DESC")
+		@pomodoros = Pomodoro.where("created_at >= ?", Time.zone.now.beginning_of_day).page(1).per(16)
 		render :layout => false
 	end
 
-	def show
-        @pomodoros = Pomodoro.all.reverse
+	def history
+        @pomodoros = Pomodoro.page(params[:page]).per(20).order("created_at DESC")
 		render :layout => false
 	end
 
