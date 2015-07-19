@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
  root 'application#tomato'
  get 'tomato/home'
  get 'pomodoros/history'
  resources :pomodoros
+ resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
