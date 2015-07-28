@@ -13,15 +13,14 @@
       <div class="col-sm-6 blog-main">
         <%= yield %>
       </div>
-
       <div class="col-sm-5 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
-<!--           <a href="/pomodoros/history">History</a> -->
-          <p> new Pomodoros </p>
-          <input id = "counting" type = "text" />
-          <p> Date </p>
-          <input id = "date" type = "text" />
-          <p> </p>
+          <% if logged_in? %>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          <% else %>
+          <li><%= link_to "Log in", login_path %></li>
+          <% end %>
           <iframe src="http://localhost:3000/pomodoros"</iframe>
         </div>
       </div>

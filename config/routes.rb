@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
  root 'application#tomato'
  get 'tomato/home'
  get 'pomodoros/history'
+ get    'login'   => 'sessions#new'
+ post   'login'   => 'sessions#create'
+ delete 'logout'  => 'sessions#destroy'
  resources :pomodoros
  resources :users
 

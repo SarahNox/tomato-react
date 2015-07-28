@@ -1,5 +1,5 @@
 <h1>User</h1>
-<p>Sign in/up</p>
+<p>Sign up</p>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,6 +12,12 @@
 
       <%= f.label :email %>
       <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Create my account" %>
     <% end %>
