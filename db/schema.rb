@@ -14,11 +14,14 @@
 ActiveRecord::Schema.define(version: 20150727083100) do
 
   create_table "pomodoros", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "project"
     t.text     "issue"
   end
+
+  add_index "pomodoros", ["user_id"], name: "index_pomodoros_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to root_url
+    flash[:success] = "Bye Bye Tomato!"
+    redirect_to tomato_home_url
   end
 
 end
