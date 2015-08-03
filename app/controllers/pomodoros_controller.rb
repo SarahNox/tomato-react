@@ -1,4 +1,5 @@
 class PomodorosController < ApplicationController
+	    before_filter :authenticate_user!
 		skip_before_action :verify_authenticity_token
 
 	def index
@@ -24,6 +25,7 @@ class PomodorosController < ApplicationController
 
 	def create
 		p = Pomodoro.new(pomodoro_params)
+		p.user = current_user
 		p.save
 		redirect_to tomato_home_path
 	end	
