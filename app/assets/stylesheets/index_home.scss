@@ -23,10 +23,6 @@ section {
     overflow: auto;
 }
 
-textarea {
-    resize: vertical;
-}
-
 table th, td {
     padding: 5px;
 }
@@ -37,17 +33,3 @@ iframe {
     width: 350px;
 }
 
-.pomodoros body {
-    padding-top: 60px;
-    background-color: #FFFFFF;
-}
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
-}

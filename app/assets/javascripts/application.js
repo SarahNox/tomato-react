@@ -23,7 +23,6 @@ var interval;
 var isTomatoOn = true;
 var i = 0;
 
-
 function countdown() {
   interval = setInterval(function() {
     if(time == 0) {

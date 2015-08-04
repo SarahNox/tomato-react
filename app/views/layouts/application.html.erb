@@ -9,19 +9,23 @@
 <body>
   <body class="pomodoros">
   <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
     <div class="row">
-      <div class="col-sm-6 blog-main">
+      <div class="col-sm-5 blog-main">
         <%= yield %>
       </div>
-      <div class="col-sm-5 col-sm-offset-1 blog-sidebar">
+      <div class="col-sm-4,5 col-sm-offset-1 blog-sidebar">
         <div class="sidebar-module">
           <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>
           <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+                    <iframe src="http://localhost:3000/pomodoros"</iframe>
           <% else %>
           <li><%= link_to "Log in", login_path %></li>
+          <iframe src="http://localhost:3000/login"></iframe>
           <% end %>
-          <iframe src="http://localhost:3000/pomodoros"</iframe>
         </div>
       </div>
     </div>

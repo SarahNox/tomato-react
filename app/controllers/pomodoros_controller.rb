@@ -1,14 +1,14 @@
 class PomodorosController < ApplicationController
-	    before_filter :authenticate_user!
-		skip_before_action :verify_authenticity_token
+	    before_filter :logged_in_user
+		skip_before_action :verify_authenticity_token, :only => :create
 
 	def index
-		@pomodoros = Pomodoro.where("created_at >= ?", Time.zone.now.beginning_of_day).page(1).per(16)
+		@pomodoros = current_user.pomodoros.where("created_at >= ?", Time.zone.now.beginning_of_day).page(1).per(16)
 		render :layout => false
 	end
 
 	def history
-        @pomodoros = Pomodoro.page(params[:page]).per(20).order("created_at DESC")
+        @pomodoros = current_user.pomodoros.page(params[:page]).per(20).order("created_at DESC")
 		render :layout => false
 	end
 
