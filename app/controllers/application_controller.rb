@@ -4,10 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :logged_in?
 
-  def tomato
-    render text: "Bye Bye Tomato"
-  end
-
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end

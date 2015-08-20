@@ -9,12 +9,12 @@ class PomodorosController < ApplicationController
 
 	def history
         @pomodoros = current_user.pomodoros.page(params[:page]).per(20).order("created_at DESC")
-		render :layout => false
+		
 	end
 
 	def new
 		@pomodoro = Pomodoro.new
-		render :layout => false
+		
 	end
 
 	def save

@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.3'
 gem 'bootstrap-sass', '3.2.0.0'
+gem 'bootstrap-material-design'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -17,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -26,7 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'rspec'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -35,6 +36,7 @@ gem 'rspec'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'rspec-rails' , '~> 3.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -46,5 +48,6 @@ group :development, :test do
 
   gem 'kaminari'
   #gem 'ajax'
+  # gem 'rack-test', '0.6.3'
 end
 

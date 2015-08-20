@@ -1,12 +1,25 @@
 <div class="center jumbotron">
-<h1>Tomato Clock</h1>
-  <h2>
-    still in progess
-  </h2>
-
-  <div id='countdown'>Pomodoro</div>
-  <button id="toggle" onclick="toggle()">Start</button>
-  <button id="stop" onclick="stop()">Stop</button>
+	<div class="row">
+		<div class="col-sm-5 blog-main">
+			<h1>Tomato Clock</h1>
+			<h2>
+				counting Pomodoros
+			</h2>
+			<div id='countdown'>Pomodoro</div>
+			<button class="btn btn-material-blue" button id="toggle" onclick="toggle()">Start</button>
+			<button class="btn btn-material-red" button id="stop" onclick="stop()">Stop</button>
+		</div>
+		<div class="col-sm-4,5 col-sm-offset-1 blog-sidebar">
+			<div class="sidebar-module">
+				<% if logged_in? %>
+				<iframe src="http://localhost:3000/pomodoros"</iframe>
+					<% else %>
+				<p> Please log in </p>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 

@@ -4,32 +4,55 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-material-design/material';
+@import 'bootstrap-material-design/ripples';
+@import 'bootstrap-material-design/snackbar';
 
 
 body {
-    padding-top: 60px;
-    background-color: #FFFFFF;
-    text-align: center;
-    background-color: #F0F0D8;
-    font-style: italic;
-    margin-left: 15px;
-    margin-right: 15px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 50px;
+  padding-top: 60px;
+  text-align: center;
 }
 
 section {
-    overflow: auto;
+  overflow: auto;
 }
 
-table th, td {
-    padding: 5px;
+textarea {
+  resize: vertical;
+}
+
+table {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
 }
 
 iframe {
     border-style: none;
     height: 350px;
     width: 350px;
+}
+
+header {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+header:hover {
+  color: #fff;
+  text-decoration: none;
 }
 

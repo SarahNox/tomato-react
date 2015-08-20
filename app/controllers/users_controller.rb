@@ -8,13 +8,11 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		render :layout => false
 	end
 
 	def show
 		@user = User.find(params[:id])
 		@pomodoros = Pomodoro.page(params[:page])
-		render :layout => false
 	end
 
 	def create

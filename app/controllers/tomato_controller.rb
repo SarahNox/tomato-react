@@ -5,7 +5,6 @@ class TomatoController < ApplicationController
 
   def show
   	@pomodoros = Pomodoro.all
-  	render :layout => false
   end
 
 end
