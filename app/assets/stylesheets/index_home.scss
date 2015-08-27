@@ -22,7 +22,7 @@ textarea {
   resize: vertical;
 }
 
-table {
+table, th, td {
   text-align: center;
 }
 
@@ -32,12 +32,6 @@ table {
 
 .center h1 {
   margin-bottom: 10px;
-}
-
-iframe {
-    border-style: none;
-    height: 350px;
-    width: 350px;
 }
 
 header {
@@ -56,3 +50,14 @@ header:hover {
   text-decoration: none;
 }
 
+row {
+  text-align: center;
+}
+
+.daily-pomodoro {
+  
+}
+
+div.new-pomodoro {
+  display: none;
+}

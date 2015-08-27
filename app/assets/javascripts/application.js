@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap-material-design
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-material-design
 //= require turbolinks
 //= require_tree .
 
@@ -23,6 +23,23 @@ var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
 var i = 0;
+
+function toggleDiv() {
+  $(".new-pomodoro").toggle();
+  $(".daily-pomodoro").toggle();
+}
+
+function toggle() {
+  if (!isTimerOn){
+    isTimerOn = true;
+    countdown();
+    document.getElementById("toggle").innerHTML = "Pause";
+  } else {
+    isTimerOn = false;
+    clearInterval(interval);
+    document.getElementById("toggle").innerHTML = "Resume";
+  }
+}
 
 function countdown() {
   interval = setInterval(function() {
@@ -48,8 +65,7 @@ function end() {
   time = pauseTime;
   setInterval(updateTimerDisplay, 2000);
   countdown();
-  count();
-  // setTimeout(refresh, 5000);
+  // count();
 }
 
 function stop() {
@@ -60,7 +76,7 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
-  window.location.replace("http://localhost:3000/pomodoros/new");
+  toggleDiv();
 }
 
 function updateTimerDisplay() {
@@ -73,86 +89,20 @@ function updateTimerDisplay() {
   el.innerHTML = text;
 }
 
-function toggle() {
-  if (!isTimerOn){
-    isTimerOn = true;
-    countdown();
-    document.getElementById("toggle").innerHTML = "Pause";
-  } else {
-    isTimerOn = false;
-    clearInterval(interval);
-    document.getElementById("toggle").innerHTML = "Resume";
-  }
-}
+// function date() {
+//   var date = new Date();
+//   var d  = date.getDate();
+//   var day = (d < 10) ? '0' + d : d;
+//   var m = date.getMonth() + 1;
+//   var month = (m < 10) ? '0' + m : m;
+//   var yy = date.getYear();
+//   var year = (yy < 1000) ? yy + 1900 : yy;
+//   var datetime = day + '/' + month + '/' + year;
+//   document.getElementById("date").value = datetime;
+// }
 
-function back() {
-  window.location.replace("http://localhost:3000/tomato/home");
-}
-
-function date() {
-  var date = new Date();
-  var d  = date.getDate();
-  var day = (d < 10) ? '0' + d : d;
-  var m = date.getMonth() + 1;
-  var month = (m < 10) ? '0' + m : m;
-  var yy = date.getYear();
-  var year = (yy < 1000) ? yy + 1900 : yy;
-  var datetime = day + '/' + month + '/' + year;
-  document.getElementById("date").value = datetime;
-}
-
-function count() {
-  i +=1;
-  document.getElementById("counting").value = i;
-  date();
-}
-
-function refresh()
-{
-  iframe = document.getElementById("http://localhost:3000/pomodoros");
-  location.reload();
-}
-
-
-// $(function (){
-
-//   var pomodoros = $('#pomodoros');
-//   var counting = $('#counting');
-//   var date = $('#date');
-
-
-//   function addPomodoro(pomodoro) {
-//       pomodoros.append('<li> pomodoros done: '+ pomodoro.counting +', date: '+ pomodoro.date +'</li>');
-//   }
-
-  // $.ajax({
-  //   type: 'GET',
-  //   url: '/pomodoros',
-  //   success : function(pomodoros) {
-  //     $.each(pomodoros, function(counting, date) {
-  //       addPomodoro(pomodoro); 
-  //     });
-  //   },
-  //   error: function() {
-  //     alert('error loading pomodoros');
-  //   }
-  // });
-
-  // var pomodoro = {
-  //   counting: counting.val(),
-  //   date: date.val(),
-  // };
-
-//   $.ajax({
-//     type: 'POST',
-//     url: '/pomodoros',
-//     data: pomodoros,
-//     success : function(newPomodoro) {
-//         addPomodoro(newPomodoro);
-//       },
-//     error: function() {
-//       alert('error saving pomodoros');
-//     }
-//   });
-
-// });
+// function count() {
+//   i +=1;
+//   document.getElementById("counting").value = i;
+//   date();
+// }

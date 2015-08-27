@@ -6,21 +6,5 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
-  <div class="col-md-5 col-md-offset-3">
-<body class="pomodoros">
-
-  <%= form_for(@pomodoro) do |f| %>
-  <div class="field">
-    <p> Project </p>
-    <%= f.text_area :project %>
-    <p> Issue </p>
-    <%= f.text_area :issue %>
-  </div>
-  <p> </p>
-  <%= f.submit "Save" %>
-  <% end %>
-</div>
-</div>
-</body>
+  <%= render "pomodoros/save" %>
 </html>

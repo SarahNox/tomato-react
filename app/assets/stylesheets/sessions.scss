@@ -22,7 +22,7 @@ textarea {
   resize: vertical;
 }
 
-table {
+table, th, td {
   text-align: center;
 }
 
@@ -48,18 +48,3 @@ p {
     margin-top: 25px;
 }
 
-iframe {
-    border-style: none;
-    height: 350px;
-    width: 500px;
-}
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-input {
-  height: auto !important;
-}

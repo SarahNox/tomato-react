@@ -12,11 +12,11 @@
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3">
 					<p> Hello <%= @user.name %> </p>
-					<table>
+					<table class="table">
 						<tr>
-							<th> User </th>
-							<th> Name </th>
-							<th> Email </th>
+							<th class= "col-sm-1"> User </th>
+							<th class= "col-sm-1"> Name </th>
+							<th class= "col-sm-1"> Email </th>
 						</tr>
 						<tr>
 							<td><%= @user.id %></td>
@@ -24,14 +24,12 @@
 							<td><%= @user.email %></td>
 						</tr>
 					</table>
-					<li><%= link_to "Log out", logout_path, method: "delete" %></li>
 				</div>
-				<iframe src="http://localhost:3000/pomodoros/history"</iframe>
+				<%= render "pomodoros/form" %>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
-
 

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@pomodoros = Pomodoro.page(params[:page])
+		@pomodoros = Pomodoro.page(params[:page]).per(10).order("created_at DESC")
 	end
 
 	def create

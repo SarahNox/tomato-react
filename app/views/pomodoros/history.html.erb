@@ -10,24 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
-				<%= paginate @pomodoros %>
-				<table>
-				<tr>
-					<th> Pomodoro </th>
-					<th> Project </th>
-					<th> Issue </th>
-					<th> Date / Time </th>
-				</tr>
-
-				<% @pomodoros.each do |pomodoro| %>
-				<tr>
-					<td><%= pomodoro.id %></td>
-					<td><%= pomodoro.project %></td>
-					<td><%= pomodoro.issue %></td>
-					<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
-				</tr>
-				<% end %>
-				</table>
+				<%= render "pomodoros/form" %>
 			</div>
 		</div>
 	</div>

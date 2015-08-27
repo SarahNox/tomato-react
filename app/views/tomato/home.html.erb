@@ -9,18 +9,22 @@
 			<button class="btn btn-material-blue" button id="toggle" onclick="toggle()">Start</button>
 			<button class="btn btn-material-red" button id="stop" onclick="stop()">Stop</button>
 		</div>
-		<div class="col-sm-4,5 col-sm-offset-1 blog-sidebar">
+		<div class="col-sm-6 col-sm-offset-1 blog-sidebar">
 			<div class="sidebar-module">
-				<% if logged_in? %>
-				<iframe src="http://localhost:3000/pomodoros"</iframe>
+				<div class="daily-pomodoro">
+					<% if logged_in? %>
+					<p> Daily done Pomodoros </p>
+					<%= render "pomodoros/form" %>
 					<% else %>
-				<p> Please log in </p>
-					<% end %>
+					<p> Please log in </p>
+					<% end %></div>
+					<div class="new-pomodoro">
+						<%= render "pomodoros/save" %>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 
 
