@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :logged_in?
+  helper_method :destroy
 
   def store_location
     session[:forwarding_url] = request.url if request.get?
@@ -28,5 +29,15 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  def destroy
+    log_out if logged_in?
+    flash[:success] = "Bye Bye Tomato!"
+    redirect_to login_url
+  end
+
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
+  end
 
 end
