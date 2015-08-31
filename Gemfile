@@ -6,7 +6,7 @@ gem 'rails', '4.2.3'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'bootstrap-material-design'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3', '1.3.10'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,6 +37,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'rspec-rails' , '~> 3.0'
+  gem 'sqlite3-ruby', :require => 'sqlite3' 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -49,5 +50,11 @@ group :development, :test do
   gem 'kaminari'
   #gem 'ajax'
   # gem 'rack-test', '0.6.3'
+  # gem 'sqlite3', '1.3.10'
+
+group :production do
+  gem 'pg'
+
+end
 end
 
