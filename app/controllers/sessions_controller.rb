@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     session.clear
     @current_user = nil
     flash[:success] = "Bye Bye Tomato!"
-    redirect_to tomato_home_url
+    redirect_to root_url
   end
 
 end

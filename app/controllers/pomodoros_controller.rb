@@ -1,5 +1,5 @@
 class PomodorosController < ApplicationController
-	    before_filter :logged_in_user
+	    before_filter :logged_in_user, :except =>[:new, :create]
 		skip_before_action :verify_authenticity_token, :only => :create
 
 	def index
@@ -24,7 +24,7 @@ class PomodorosController < ApplicationController
 		p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
 		p.save
-		redirect_to tomato_home_path
+		redirect_to root_path
 	end	
 
 private

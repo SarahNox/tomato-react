@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :logged_in_user
+	before_action :logged_in_user, :except =>[:new, :create]
 	skip_before_action :verify_authenticity_token
 
 	def index
