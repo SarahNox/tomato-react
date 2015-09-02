@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
- root 'application#tomato'
- get 'tomato/home'
+ # root 'application#tomato'
+ root 'tomato#home'
  get 'pomodoros/history'
  get    'login'   => 'sessions#new'
  post   'login'   => 'sessions#create'
