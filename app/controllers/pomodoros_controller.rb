@@ -1,5 +1,5 @@
 class PomodorosController < ApplicationController
-	    before_filter :logged_in_user, :except =>[:new, :create]
+	    before_filter :logged_in_user
 		skip_before_action :verify_authenticity_token, :only => :create
 
 	def index

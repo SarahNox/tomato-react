@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   helper_method :destroy
 
+
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end

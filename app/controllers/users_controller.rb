@@ -12,15 +12,16 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@pomodoros = Pomodoro.page(params[:page]).per(10).order("created_at DESC")
+		@pomodoros = current_user.pomodoros.page(params[:page]).per(10).order("created_at DESC")
+		# @pomodoros = Pomodoro.page(params[:page]).per(10).order("created_at DESC")
 	end
 
 	def create
 		@user = User.new(user_params)   
 		if @user.save
-			log_in @user
+			session[:user_id] = @user.id
 			flash[:success] = "Welcome to the Pomodoro-Clock!"
-			redirect_to @user
+			redirect_to root_url
 		else
 			render 'new'
 		end

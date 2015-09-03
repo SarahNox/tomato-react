@@ -22,7 +22,7 @@ var pauseTime = 3;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
-var i = 0;
+// var i = 0;
 
 function toggleDiv() {
   $(".new-pomodoro").toggle();

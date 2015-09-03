@@ -2,7 +2,6 @@
 	<%= paginate @pomodoros %>
 <table class="table">
 <tr>
-	<th class= "col-sm-1"> Pomodoro </th>
 	<th class= "col-sm-1"> Project </th>
 	<th class= "col-sm-1"> Issue </th>
 	<th class= "col-sm-1"> Date / Time </th>
@@ -10,7 +9,6 @@
 
 <% @pomodoros.each do |pomodoro| %>
 <tr>
-	<td><%= pomodoro.id %></td>
 	<td><%= pomodoro.project %></td>
 	<td><%= pomodoro.issue %></td>
 	<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
