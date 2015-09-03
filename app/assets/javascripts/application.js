@@ -16,13 +16,12 @@
 //= require turbolinks
 //= require_tree .
 
-var isTimerOn = false;
-var tomatoTime = 5; 
-var pauseTime = 3;
+var isTimerOn = false; 
+var tomatoTime = 1500; 
+var pauseTime = 300;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
-// var i = 0;
 
 function toggleDiv() {
   $(".new-pomodoro").toggle();
@@ -65,7 +64,6 @@ function end() {
   time = pauseTime;
   setInterval(updateTimerDisplay, 2000);
   countdown();
-  // count();
 }
 
 function stop() {
@@ -89,20 +87,3 @@ function updateTimerDisplay() {
   el.innerHTML = text;
 }
 
-// function date() {
-//   var date = new Date();
-//   var d  = date.getDate();
-//   var day = (d < 10) ? '0' + d : d;
-//   var m = date.getMonth() + 1;
-//   var month = (m < 10) ? '0' + m : m;
-//   var yy = date.getYear();
-//   var year = (yy < 1000) ? yy + 1900 : yy;
-//   var datetime = day + '/' + month + '/' + year;
-//   document.getElementById("date").value = datetime;
-// }
-
-// function count() {
-//   i +=1;
-//   document.getElementById("counting").value = i;
-//   date();
-// }
