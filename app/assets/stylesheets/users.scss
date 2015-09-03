@@ -4,19 +4,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'bootstrap-material-design/material';
-@import 'bootstrap-material-design/ripples';
-@import 'bootstrap-material-design/snackbar';
 
-
-body {
-  padding-top: 60px;
-  text-align: center;
-}
-
-section {
-  overflow: auto;
-}
 
 textarea {
   resize: vertical;
@@ -30,12 +18,6 @@ table, th, td {
   text-align: center;
 }
 
-.center h1 {
-  margin-bottom: 10px;
-}
-
 p {
   margin-top: 25px;
 }
-
-

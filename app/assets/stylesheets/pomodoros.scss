@@ -4,48 +4,9 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'bootstrap-material-design/material';
-@import 'bootstrap-material-design/ripples';
-@import 'bootstrap-material-design/snackbar';
-
-
-body {
-  padding-top: 60px;
-  text-align: center;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
 
 table, th, td {
   text-align: center;
-}
-
-.center {
-  text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
-}
-
-#countdown {
-    width: 150px;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 25px;
-}
-
-p {
-    margin-top: 25px;
 }
 
 input, textarea, select, .uneditable-input {
@@ -57,5 +18,3 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
-
-
