@@ -75,7 +75,15 @@ function stop() {
   time = tomatoTime; 
   updateTimerDisplay();
   toggleDiv();
+} 
+
+function interrupt() {
+  clearInterval(interval);
+  time = tomatoTime;
+  updateTimerDisplay();
+  alert("Pomodoro destroyed"); 
 }
+
 
 function updateTimerDisplay() {
   var el = document.getElementById("countdown");
