@@ -18,3 +18,13 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+#countdown {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+}
