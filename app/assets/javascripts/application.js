@@ -52,7 +52,7 @@ function countdown() {
     }
     updateTimerDisplay(time);
     time--;
-  }, 1000); 
+  }, 999); 
 }
 
 function end() {
@@ -78,12 +78,15 @@ function stop() {
 } 
 
 function interrupt() {
+  isTomatoOn = false;
+  isTimerOn = false;
   clearInterval(interval);
+  document.getElementById("toggle").innerHTML = "Start";
   time = tomatoTime;
   updateTimerDisplay();
   alert("Pomodoro destroyed"); 
+  location.reload();
 }
-
 
 function updateTimerDisplay() {
   var el = document.getElementById("countdown");
