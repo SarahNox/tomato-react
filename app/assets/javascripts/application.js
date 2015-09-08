@@ -78,12 +78,6 @@ function stop() {
 } 
 
 function interrupt() {
-  isTomatoOn = false;
-  isTimerOn = false;
-  clearInterval(interval);
-  document.getElementById("toggle").innerHTML = "Start";
-  time = tomatoTime;
-  updateTimerDisplay();
   alert("Pomodoro destroyed"); 
   location.reload();
 }
