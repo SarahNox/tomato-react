@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :logged_in_user, :except =>[:new, :create]
 	skip_before_action :verify_authenticity_token
+	helper_method :edit_user_params
 
 	def index
 		@users = User.page(params[:page]).per(20).order("created_at DESC")
@@ -13,7 +14,6 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@pomodoros = current_user.pomodoros.page(params[:page]).per(10).order("created_at DESC")
-		# @pomodoros = Pomodoro.page(params[:page]).per(10).order("created_at DESC")
 	end
 
 	def create
@@ -27,8 +27,30 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def edit
+        @user = User.find(params[:id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        if @user.update_attributes(edit_user_params)
+        	flash[:success] = "Profile updated"
+            redirect_to @user
+        else
+            render 'edit'
+        end
+    end
+
 	private
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end
+
+	def edit_user_params
+        params.require(:user).permit(:name, :email, :password)
+    end
+
+    def change_password_params
+        params.require(:user).permit(:password)
+    end
 end
