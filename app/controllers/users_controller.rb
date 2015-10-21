@@ -33,10 +33,12 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        if @user.update_attributes(edit_user_params)
+        if @user.authenticate(user_params[:password])
+        	@user.update_attributes(edit_user_params)
         	flash[:success] = "Profile updated"
             redirect_to @user
         else
+        	flash.now[:error] = "Authentication failed"
             render 'edit'
         end
     end
@@ -47,10 +49,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit_user_params
-        params.require(:user).permit(:name, :email, :password)
+        params.require(:user).permit(:name, :email)
     end
 
-    def change_password_params
-        params.require(:user).permit(:password)
-    end
 end
