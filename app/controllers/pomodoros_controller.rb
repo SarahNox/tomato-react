@@ -1,13 +1,13 @@
 class PomodorosController < ApplicationController
-	    before_filter :logged_in_user
-		skip_before_action :verify_authenticity_token, :only => :create
+	before_filter :logged_in_user
+	skip_before_action :verify_authenticity_token, :only => :create
 
 	def index
 		@pomodoros = Pomodoro.daily_pomodoros(current_user)
 	end
 
 	def history
-        @pomodoros = current_user.pomodoros.page(params[:page]).per(10).order("created_at DESC")	
+		@pomodoros = current_user.pomodoros.page(params[:page]).per(10).order("created_at DESC")	
 	end
 
 	def new
@@ -25,11 +25,11 @@ class PomodorosController < ApplicationController
 		p.user = current_user
 		p.save
 		redirect_to root_path
-	end	
+	end
 
-private
-    def pomodoro_params
-      params.require(:pomodoro).permit(:project, :issue)
-    end
+	private
+	def pomodoro_params
+		params.require(:pomodoro).permit(:project, :issue)
+	end
 end
 

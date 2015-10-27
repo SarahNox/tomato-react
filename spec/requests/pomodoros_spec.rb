@@ -19,6 +19,7 @@ RSpec.describe "Pomodoros", type: :request do
   describe "GET /pomodoros/new" do
     before do 
       @user = User.create! name: "abcdef", email: "abc@def.com" ,  password: "abcdef" , password_confirmation: "abcdef" 
+      #user = FactoryGirl.create :user 
     end
 
     it "should not display pomodoros from the past" do
