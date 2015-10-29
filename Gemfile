@@ -38,6 +38,7 @@ gem 'kaminari'
 # gem 'capistrano-rails', group: :development
 gem 'guard'
 gem 'factory_girl'
+gem 'timecop'
 
 group :development, :test do
   gem 'rspec-rails' , '~> 3.0'
