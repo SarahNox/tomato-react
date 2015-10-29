@@ -36,6 +36,8 @@ gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'guard'
+gem 'factory_girl'
 
 group :development, :test do
   gem 'rspec-rails' , '~> 3.0'
