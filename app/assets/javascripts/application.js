@@ -22,11 +22,28 @@ var pauseTime = 300;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
+var pause = 120;
 
 function toggleDiv() {
   $(".new-pomodoro").toggle();
   $(".daily-pomodoro").toggle();
 }
+
+// function pausetime() {
+//   isTimerOn = true;
+//   interval = setInterval(function() {
+//     if(time == 0) {
+//       if(isTomatoOn) { 
+//         interrupt();
+//       } else {
+//         countdown();
+//       }
+//       return;
+//     }
+//     updateTimerDisplay(time);
+//     time--;
+//   }, 999); 
+// }
 
 function toggle() {
   if (!isTimerOn){
@@ -36,6 +53,9 @@ function toggle() {
   } else {
     isTimerOn = false;
     clearInterval(interval);
+    // time = pause;
+    // updateTimerDisplay();
+    // pausetime();
     document.getElementById("toggle").innerHTML = "Resume";
   }
 }
