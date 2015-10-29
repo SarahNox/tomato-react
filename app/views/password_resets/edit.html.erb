@@ -14,14 +14,6 @@
       <%= f.label :password_confirmation, "confirm new password" %>
       <%= f.password_field :password_confirmation, :placeholder => "confirm new password" %>
 
-      <%= f.password_field :current_password, :placeholder => "current password to confirm changes", :required => true %>
-
-      <%= f.label :new_password %>
-      <%= f.password_field :new_password, :placeholder => "enter new password" %>
-
-      <%= f.label :new_password_confirmation, "confirm new password" %>
-      <%= f.password_field :new_password_confirmation, :placeholder => "confirm new password" %>
-
       <br /> <br />
 
        <%= f.submit "Save changes" %>
