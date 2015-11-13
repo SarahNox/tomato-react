@@ -6,17 +6,13 @@
 @import "bootstrap";
 
 
-body {
-  padding-top: 60px;
-  text-align: center;
-}
-
 section {
   overflow: auto;
 }
 
 textarea {
   resize: vertical;
+  font-size: 200%;
 }
 
 table, th, td {
@@ -31,20 +27,8 @@ table, th, td {
   margin-bottom: 10px;
 }
 
-header {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
-
-header:hover {
-  color: #fff;
-  text-decoration: none;
+.center-div {
+  margin: 0 auto;
 }
 
 row {
@@ -60,5 +44,6 @@ div.new-pomodoro {
 }
 
 .row form {
-  display: block;
+  display: inline-block;
 }
+

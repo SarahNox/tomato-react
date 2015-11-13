@@ -1,19 +1,21 @@
-<h1> All Pomodoros </h1>
 <!DOCTYPE html>
 <html>
 <head>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body class="pomodoros">
 	<div class="container">
+    <div class="col-sm-6 blog-main">
+      <h3> All Pomodoros </h3>
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-sm-9 col-sm-offset-3">
 				<%= render "pomodoros/form" %>
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 </body>
 </html>

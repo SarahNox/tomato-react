@@ -4,8 +4,7 @@
   <title>Tomato</title>
    <script src="../HackTimer.js"></script>
    <script src="../HackTimerWorker.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -13,16 +12,19 @@
   <body class="pomodoros">
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        <ul class="tomato navbar-left">
+          <p> pomodoro </p>
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
-          <li><%= link_to "Clock", root_path %></li>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "History", pomodoros_history_path %></li>
-          <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-          <li><%= link_to "Log out", logout_path, method: "delete"  %></li>
+          <li><%= link_to "CLOCK", root_path %></li>
+          <li><%= link_to "USERS", users_path %></li>
+          <li><%= link_to "HISTORY", pomodoros_history_path %></li>
+          <li><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
+          <li><%= link_to "LOG OUT", logout_path, method: "delete"  %></li>
           <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-          <li><%= link_to "Sign up", users_new_path %></li>
+          <li><%= link_to "LOG IN", login_path %></li>
+          <li><%= link_to "SIGN UP", users_new_path %></li>
           <% end %>
         </ul> 
       </div>

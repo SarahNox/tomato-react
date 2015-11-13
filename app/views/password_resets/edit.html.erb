@@ -1,20 +1,18 @@
 <% provide(:title, "Edit password") %>
- <h1>Update your password</h1>
+ <h3>Update your password</h3>
 
  <div class="row">
    <div class="col-md-6 col-md-offset-3">
     <%= form_for(:password_resets) do |f| %>
 
-      <%= f.label :current_password %>
-      <%= f.password_field :password, :placeholder => "current password to confirm changes", :required => true %>
+      <%= f.label :current_password, "CURRENT PASSWORD", class: "form_control" %>
+      <%= f.password_field :password, :required => true, class: "field_control" %>
 
-      <%= f.label :new_password %>
-      <%= f.password_field :password, :placeholder => "enter new password" %>
+      <%= f.label :new_password, "NEW PASSWORD", class: "form_control" %>
+      <%= f.password_field :password, class: "field_control" %>
 
-      <%= f.label :password_confirmation, "confirm new password" %>
-      <%= f.password_field :password_confirmation, :placeholder => "confirm new password" %>
-
-      <br /> <br />
+      <%= f.label :password_confirmation, "NEW PASSWORD CONFIRMATION", class: "form_control" %>
+      <%= f.password_field :password_confirmation, class: "field_control" %>
 
        <%= f.submit "Save changes" %>
      <% end %>
