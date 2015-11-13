@@ -1,24 +1,26 @@
 <% provide(:title, "Edit user") %>
- <h1>Update your profile</h1>
+<div class="col-sm-6 blog-main">
+ <h3>Update your profile</h3>
 
  <div class="row">
    <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name, "NAME", class: "form_control" %>
+      <%= f.text_field :name, class: "field_control" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.label :email, "EMAIL", class: "form_control" %>
+      <%= f.email_field :email, class: "field_control" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, :placeholder => "confirm changes by enterin password" %>
+      <%= f.label :password, "PASSWORD", class: "form_control" %>
+      <%= f.password_field :password, :placeholder => "confirm changes by entering password", class: "field_control" %>
 
       <br /> <br />
+      <button type="submit" class="btn btn-default">Save changes</button>
 
-       <%= f.submit "Save changes" %>
      <% end %>
      <p>Want to change your password? <%= link_to "Change Password", password_edit_path %></p>
    </div>
  </div> 
+</div>

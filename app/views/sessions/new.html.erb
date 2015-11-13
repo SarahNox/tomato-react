@@ -1,28 +1,29 @@
 <head>
   <html>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-
   </html>
 </head>
-<h1>Log in</h1>
-
+<div class="col-sm-6 blog-main">
+<h1>welcome</h1>
+<h2>to pomodoro!</h2>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-sm-6 col-sm-offset-3">
     <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email%>
+      <%= f.label :email , "EMAIL", class: "form_control" %>
+      <%= f.email_field :email, class: "field_control" %>
+    
 
-      <%= f.label :password %>
+      <%= f.label :password, "PASSWORD", class: "form_control" %>
       <%= link_to "(forgot password)", new_password_reset_path %>
-      <%= f.password_field :password %>
-      <br /> <br />
+      <%= f.password_field :password, class: "field_control"  %>
 
-      <%= f.submit "Log in" %>
+      <button type="submit" class="button">LOG IN</button> <br> </br>
+      <a href="/users/new"><button class="button_second">SIGN UP</button></a>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", users_new_path %></p>
   </div>
 </div>
+</div>
+  

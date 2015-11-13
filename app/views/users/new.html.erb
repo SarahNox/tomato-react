@@ -1,31 +1,32 @@
 <html>
-<h1>User</h1>
-<p>Sign up</p>
+<div class="col-sm-6 blog-main">
+<h3>User - Sign up</h3>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-7 col-md-offset-3">
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.label :name, "NAME", class: "form_control" %>
+      <%= f.text_field :name, class: "field_control" %>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.label :email, "EMAIL", class: "form_control" %>
+      <%= f.email_field :email, class: "field_control" %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :password, "PASSWORD", class: "form_control" %>
+      <%= f.password_field :password, class: "field_control" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-      <br /> <br />
+      <%= f.label :password_confirmation, "PASSWORD CONFIRMATION", class: "form_control" %>
+      <%= f.password_field :password_confirmation, class: "field_control" %>
+      
+      <button type="submit" class="button">SIGN UP</button><br> </br>
+      <a href="/login"><button class="button_second">LOG IN</button></a>
 
-      <%= f.submit "Create my account" %>
     <% end %>
-    <p>Already signed up? <%= link_to "Log in!", login_path %></p>
   </div>
+</div>
 </div>
 </html>
