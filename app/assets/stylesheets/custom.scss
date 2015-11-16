@@ -4,13 +4,14 @@
 
 * {
   font-family: Montserrat;
+  src: url(montserrat_regular.woff);
 }
 
 body {
   background-color: #FFFFFF;
   padding-top: 60px;
   text-align: center;
-    background-image: url(grey4.png) !important;
+  background: image-url("grey4.png") !important;
   height: 1px;
   width: 150;
   background-repeat: repeat-y !important; 
