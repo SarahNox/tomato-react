@@ -11,7 +11,7 @@ body {
   background-color: #FFFFFF;
   padding-top: 60px;
   text-align: center;
-  background: image-url("grey4.png") !important;
+  background-image: url(image-path('grey4.png')) !important;
   height: 1px;
   width: 150;
   background-repeat: repeat-y !important; 
