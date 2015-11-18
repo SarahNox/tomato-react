@@ -16,7 +16,3 @@
  *= require_self
  */
 
- @font-face {
-  font-family: 'montserrat';
-  src: asset-url('montserrat_regular.otf');
-}

@@ -2,6 +2,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+  font-family: 'montserrat';
+  src: asset-url('montserrat_regular.otf');
+}
 
 body {
   background-color: #FFFFFF;
