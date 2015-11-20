@@ -2,48 +2,4 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-  font-size: 200%;
-}
-
-table, th, td {
-  text-align: center;
-}
-
-.center {
-  text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
-}
-
-.center-div {
-  margin: 0 auto;
-}
-
-row {
-  text-align: center;
-}
-
-.daily-pomodoro {
-  
-}
-
-div.new-pomodoro {
-  display: none;
-}
-
-.row form {
-  display: inline-block;
-}
 

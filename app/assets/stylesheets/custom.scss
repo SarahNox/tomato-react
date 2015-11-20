@@ -148,3 +148,88 @@ p1, .p1 {
   text-decoration: none;
 }
 
+table, th, td {
+  text-align: center;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 0;
+  width: 100%;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #808080;
+}
+
+input:focus {
+  border-bottom: 2px solid #435160;
+}
+
+input[type=button] {
+  background: #fff;
+  border:1px solid #000;
+}
+
+input {
+  height: auto !important;
+}
+
+#countdown {
+    width: 150px;
+    margin: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+  font-size: 200%;
+}
+
+table, th, td {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.center-div {
+  margin: 0 auto;
+}
+
+.row {
+  text-align: center;
+}
+
+.daily-pomodoro {
+  
+}
+
+div.new-pomodoro {
+  display: none;
+}
+
+.row form {
+  display: inline-block;
+}
+
+
+.center {
+  text-align: center;
+}
+
+p {
+  margin-top: 25px;
+}
+
+
