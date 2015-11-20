@@ -2,9 +2,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-body, input, textarea, table, th, td, h1, h2, h3, h4, h5, h6, h7, p {
-      font-family: 'Montserrat' !important;
+@font-face {
+    font-family: 'Montserrat' ;
     src: url( asset-path('montserrat-regular-webfont.eot'));
     src: url( asset-path('montserrat-regular-webfont.woff2')) format('woff2'),
          url( asset-path('montserrat-regular-webfont.woff')) format('woff'),
@@ -13,6 +12,10 @@ body, input, textarea, table, th, td, h1, h2, h3, h4, h5, h6, h7, p {
          url( asset-path('montserrat-regular-webfont.svg#montserratregular')) format('svg');
     font-weight: normal;
     font-style: normal;
+}
+
+body, input, textarea, table, th, td, h1, h2, h3, h4, h5, h6, h7, p {
+    font-family: 'Montserrat' ;
 }
 
 body {
