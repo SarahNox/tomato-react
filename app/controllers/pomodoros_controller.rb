@@ -20,16 +20,28 @@ class PomodorosController < ApplicationController
 		render text: "Pomodoro saved"
 	end
 
+  def issue
+    @pomodoro = Pomodoro.new(issue_params)
+  end
+
 	def create
 		p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
 		p.save
-		redirect_to root_path
+		redirect_to root_url
 	end
 
 	private
 	def pomodoro_params
 		params.require(:pomodoro).permit(:project, :issue)
 	end
+
+  def project_params
+    params.permit(:project)
+  end
+
+  def issue_params
+    params.permit(:issue)
+  end
 end
 

@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   resources :users
   post 'users/:id/update_password', to: 'users#update_password', as: "password_update"
   get 'users/:id/edit_password', to: 'users#edit_password', as: 'password_edit'
+  # post 'users/:id/project', to: 'users#project', as: 'project'
+  get 'pomodoros/:id/new', to: 'pomodoros#new', as: 'project'
+  get 'pomodoros/:id/title', to: 'pomodoros#title', as: 'issue'
+  # post 'users/:id/issue', to: 'users#issue', as: 'issue'
 resources :password_resets #, only: [:new, :create, :edit, :update]
 
 # The priority is based upon order of creation: first created -> highest priority.

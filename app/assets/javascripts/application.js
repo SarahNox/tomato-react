@@ -17,8 +17,8 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 15; 
+var pauseTime = 3;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
@@ -59,6 +59,7 @@ function toggle() {
     document.getElementById("toggle").innerHTML = "Resume";
   }
 }
+
 
 function countdown() {
   interval = setInterval(function() {
@@ -112,3 +113,6 @@ function updateTimerDisplay() {
   el.innerHTML = text;
 }
 
+$(function() {
+    $(".dial").knob();
+});

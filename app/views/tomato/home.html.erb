@@ -1,31 +1,31 @@
-<div class="center jumbotron">
-	<div class="row">
 		<div class="col-sm-5 blog-main">
 			<h2>Tomato Clock</h2>
-			<h3>
+			<h7>
 				counting Pomodoros
-			</h3>
-			<div id='countdown'>Pomodoro</div>
+			</h7>
+			<div id="countdown">Pomodoro</div>
 			<button class="btn btn-material-blue" button id="toggle" onclick="toggle()">Start</button>
 			<button class="btn btn-material-red" button id="interrupt" onclick="interrupt()">Stop</button>
 		</div>
 		<div class="col-md-5 col-md-offset-2 blog-sidebar">
 			<div class="sidebar-module">
 				<div class="daily-pomodoro">
-					<% if logged_in? %>
-					<p> Daily done Pomodoros </p>
-					<%= render "pomodoros/form" %>
-					<% else %>
-					<p> Please log in </p>
-					<% end %></div>
-					<div class="new-pomodoro">
-						<p> Save Pomodoro </p>
-						<%= render "pomodoros/save" %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <div class="headline">
+            <% if logged_in? %>
+            <span class="hip"> + </span>
+            <% else %>
+            <span class=" "> </span>
+            <% end %>
+          </div>
+          <%= render "pomodoros/form" %>
+        </div>
+        <div class="new-pomodoro">
+          <%= render "pomodoros/save" %>
+        </div>
+      </div>
+    </div>
+
+
 
 
 

@@ -40,6 +40,7 @@ gem 'kaminari'
 gem 'guard'
 gem 'factory_girl'
 gem 'timecop'
+gem 'passenger'
 
 group :development, :test do
   gem 'rspec-rails' , '~> 3.0'
