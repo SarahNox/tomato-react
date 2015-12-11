@@ -113,6 +113,3 @@ function updateTimerDisplay() {
   el.innerHTML = text;
 }
 
-$(function() {
-    $(".dial").knob();
-});
