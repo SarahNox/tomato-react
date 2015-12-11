@@ -11,11 +11,11 @@
 			<div class="sidebar-module">
 				<div class="daily-pomodoro">
           <div class="headline">
-            <% if logged_in? %>
-            <span class="hip"> + </span>
-            <% else %>
-            <span class=" "> </span>
-            <% end %>
+              <% if logged_in? %>
+              <span data-tooltip aria-haspopup="true" class="hip" title="Projectname"> + </span>
+              <% else %>
+              <span class=" "> </span>
+              <% end %>
           </div>
           <%= render "pomodoros/form" %>
         </div>
