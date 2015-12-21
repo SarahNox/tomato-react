@@ -93,7 +93,7 @@ header.navbar.navbar-fixed-top {
 }
 
 .container {
-  padding-right: 0px;
+  padding-right: -10px;
   margin-right: 20px;
   margin-left: 200px;
   padding-left: 10px;
@@ -101,7 +101,7 @@ header.navbar.navbar-fixed-top {
 }
 
 .col-sm-6 {
-  margin-top: 2px;
+  margin-top: 10px;
   margin-right: 500px;
   -webkit-box-shadow-right: 5px 15px 25px rgba(100, 100, 100, 0.49);
 }
@@ -200,13 +200,15 @@ input {
 }
 
 #countdown {
-    width: 150px;
+    width: 400px;
     margin: auto;
     margin-bottom: 50px;
-    margin-top: 50px;
-    border-style: solid;
+    margin-top: -280px;
+    border-style: none;
     border-width: 1px;
-    border-radius: 25px;
+    border-radius: 0px;
+    font-size: 400%;
+    color: #ff0000;
 }
 
 section {
@@ -366,5 +368,28 @@ ul.nav.navbar-nav.navbar-right {
   color:#D3D3D3;
 }
 
+input.dial {
+  padding-top: -110px !important;
+  height: 100px !important;
+  width: 300px !important;
+  margin-top: -280px !important;
+  margin-left: -130px !important;
+  font-size: 400% !important;
+}
 
-
+.circular-bar{
+  text-align: center;
+  .circular-bar-content{
+    margin-bottom: 70px;
+    margin-top: -95px;
+    text-align: center;
+    strong{
+      display: block;
+      font-weight: 600;
+    }
+    label{
+      display: block;
+      font-weight: 300;
+    }
+  }
+}

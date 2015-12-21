@@ -17,33 +17,17 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 15; 
-var pauseTime = 3;
+var tomatoTime = 1500; 
+var pauseTime = 300;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
-var pause = 120;
+var almostASecondInMiliseconds = 999;
 
 function toggleDiv() {
   $(".new-pomodoro").toggle();
   $(".daily-pomodoro").toggle();
 }
-
-// function pausetime() {
-//   isTimerOn = true;
-//   interval = setInterval(function() {
-//     if(time == 0) {
-//       if(isTomatoOn) { 
-//         interrupt();
-//       } else {
-//         countdown();
-//       }
-//       return;
-//     }
-//     updateTimerDisplay(time);
-//     time--;
-//   }, 999); 
-// }
 
 function toggle() {
   if (!isTimerOn){
@@ -53,13 +37,9 @@ function toggle() {
   } else {
     isTimerOn = false;
     clearInterval(interval);
-    // time = pause;
-    // updateTimerDisplay();
-    // pausetime();
     document.getElementById("toggle").innerHTML = "Resume";
   }
 }
-
 
 function countdown() {
   interval = setInterval(function() {
@@ -73,17 +53,19 @@ function countdown() {
     }
     updateTimerDisplay(time);
     time--;
-  }, 999); 
+    $('.dial').val(time).trigger('change');
+  }, almostASecondInMiliseconds); 
 }
 
 function end() {
   isTomatoOn = false;
   isTimerOn = false;
-  document.getElementById("countdown").innerHTML = "Pause for 5 Minutes!";
+  document.getElementById("countdown").innerHTML = "Pause!";
   document.getElementById("toggle").innerHTML = ":-)";
   clearInterval(interval);
   time = pauseTime;
-  setInterval(updateTimerDisplay, 2000);
+  $('.dial').val(time).trigger('configure', {'max': pauseTime });
+  setInterval(updateTimerDisplay, almostASecondInMiliseconds);
   countdown();
 }
 
