@@ -22,28 +22,12 @@ var pauseTime = 300;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
-var pause = 120;
+var almostASecondInMiliseconds = 999;
 
 function toggleDiv() {
   $(".new-pomodoro").toggle();
   $(".daily-pomodoro").toggle();
 }
-
-// function pausetime() {
-//   isTimerOn = true;
-//   interval = setInterval(function() {
-//     if(time == 0) {
-//       if(isTomatoOn) { 
-//         interrupt();
-//       } else {
-//         countdown();
-//       }
-//       return;
-//     }
-//     updateTimerDisplay(time);
-//     time--;
-//   }, 999); 
-// }
 
 function toggle() {
   if (!isTimerOn){
@@ -53,13 +37,9 @@ function toggle() {
   } else {
     isTimerOn = false;
     clearInterval(interval);
-    // time = pause;
-    // updateTimerDisplay();
-    // pausetime();
     document.getElementById("toggle").innerHTML = "Resume";
   }
 }
-
 
 function countdown() {
   interval = setInterval(function() {
@@ -74,7 +54,7 @@ function countdown() {
     updateTimerDisplay(time);
     time--;
     $('.dial').val(time).trigger('change');
-  }, 999); 
+  }, almostASecondInMiliseconds); 
 }
 
 function end() {
@@ -84,8 +64,8 @@ function end() {
   document.getElementById("toggle").innerHTML = ":-)";
   clearInterval(interval);
   time = pauseTime;
-  $('.dial').val(time).trigger('configure', {'max': 300 });
-  setInterval(updateTimerDisplay, 999);
+  $('.dial').val(time).trigger('configure', {'max': pauseTime });
+  setInterval(updateTimerDisplay, almostASecondInMiliseconds);
   countdown();
 }
 
@@ -114,42 +94,4 @@ function updateTimerDisplay() {
   var text = minutes + ':' + seconds;
   el.innerHTML = text;
 }
-
-// $('.countdown').ClassyCountdown({
-//     theme: "flat-colors",
-//     end: $.now() + 1500
-// });
-       
-
-// (function($) {
-//   $.fn.countdown = function(options) {
-//     var settings = { 'date': null };
-//     if(options) {
-//       $.extend(settings, options);
-//     }
-
-//     this_sel = $(this);
-    
-//     function count_exec() {
-//       eventDate = Date.parse(settings['date']) / 1000; // Parse the date string
-//       currentDate =   Math.floor($.now() / 1000); // Find the timestamp for now
-//       seconds = eventDate - currentDate; // Find the number of seconds remaining
-//       if (seconds <= 0) { // After the event date has passed
-//         minutes = 0;
-//         seconds = 0;
-//       } else {
-//         minutes =     Math.floor(seconds / 60);
-//         seconds -=    minutes * 60;
-//       }
-//       this_sel.find('#mins').val(minutes).trigger('change');
-//       this_sel.find('#secs').val(seconds).trigger('change');
-
-//     } // End of count_exec();
-
-//     count_exec();
-
-//     interval = setInterval(count_exec, 1000);
-
-//   } // End of the main function
-// }) (jQuery);
 
