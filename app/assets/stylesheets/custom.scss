@@ -73,6 +73,30 @@ header.navbar.navbar-fixed-top {
   text-decoration: none;
 }
 
+.btn_start {
+    width:60px;
+    height:60px;
+    line-height:45px;
+    border-radius: 50%;
+    color:#ffffff !important;
+    background: #ff0000 !important;
+    box-shadow: 0 0 3px gray;
+    font-size: 150%;
+    border: 0 none;
+}
+
+.btn_stop {
+    width:60px;
+    height:60px;
+    line-height:45px;
+    border-radius: 50%;
+    color:#ffffff !important;
+    background: #000000 !important;
+    box-shadow: 0 0 3px gray;
+    font-size: 100%;
+    border: 0 none;
+}
+
 .form_control {
   margin-top: 25px;
 }
@@ -182,8 +206,11 @@ table, th, td {
 input, textarea, select, .uneditable-input {
   border: 0;
   width: 100%;
+  margin-top: 50px;
   margin-bottom: 50px;
   border-bottom: 1px solid #808080;
+  text-align: center;
+  font-size: 300%;
 }
 
 input:focus {
@@ -208,7 +235,7 @@ input {
     border-width: 1px;
     border-radius: 0px;
     font-size: 400%;
-    color: #ff0000;
+
 }
 
 section {
@@ -316,6 +343,7 @@ ul.nav.navbar-nav.navbar-right {
 #menu {
   font-size:14px;
   position:absolute; 
+  margin-right: -200px;
 }
 
 #menu ul {
@@ -327,6 +355,7 @@ ul.nav.navbar-nav.navbar-right {
 
 #menu li.topmenu {
   float:left;
+  margin-right: -10px;
 }
 
 .topmenu a {
