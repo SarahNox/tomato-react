@@ -98,7 +98,7 @@
             this.o = $.extend({
                     // Config
                     min: this.$.data('min') !== undefined ? this.$.data('min') : 0,
-                    max: this.$.data('max') !== undefined ? this.$.data('max') : 1500,
+                    max: this.$.data('max') !== undefined ? this.$.data('max') : 20,
                     stopper: true,
                     readOnly: this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
 
@@ -113,7 +113,7 @@
                     height: this.$.data('height') || 500,
                     displayInput: this.$.data('displayinput') == false,
                     displayPrevious: this.$.data('displayprevious'),
-                    fgColor: this.$.data('fgcolor') || '#87CEEB',
+                    fgColor: this.$.data('fgcolor') || '#ff0000',
                     inputColor: this.$.data('inputcolor'),
                     font: this.$.data('font') || 'Montserrat',
                     fontWeight: this.$.data('font-weight') || 'bold',

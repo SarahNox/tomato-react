@@ -17,8 +17,8 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 20; 
+var pauseTime = 10;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
@@ -33,11 +33,11 @@ function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
     countdown();
-    document.getElementById("toggle").innerHTML = "Pause";
+    document.getElementById("toggle").innerHTML = " % ";
   } else {
     isTimerOn = false;
     clearInterval(interval);
-    document.getElementById("toggle").innerHTML = "Resume";
+    document.getElementById("toggle").innerHTML = "Go";
   }
 }
 
@@ -64,7 +64,7 @@ function end() {
   document.getElementById("toggle").innerHTML = ":-)";
   clearInterval(interval);
   time = pauseTime;
-  $('.dial').val(time).trigger('configure', {'max': pauseTime });
+  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
   countdown();
 }
@@ -73,7 +73,7 @@ function stop() {
   isTomatoOn = true;
   isTimerOn = false;
   clearInterval(interval);
-  document.getElementById("toggle").innerHTML = "Start";
+  document.getElementById("toggle").innerHTML = ">";
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();

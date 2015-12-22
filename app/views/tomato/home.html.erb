@@ -5,15 +5,15 @@
   });
   </script>
   <div class="circular-bar">
-    <input class="dial" data-fgColor="#ff0000" data-width="450" data-height="450" value="1500">
+    <input class="dial" data-width="450" data-height="450" value="20">
     <div class="circular-bar-content"
     <strong></strong>
     <div id="countdown">Tomato</div>
     <label></label>
   </div>
 </div>
-<button class="btn btn-material-blue" button id="toggle" onclick="toggle()">Start</button>
-<button class="btn btn-material-red" button id="interrupt" onclick="interrupt()">Stop</button>
+<button class="btn btn_start" button id="toggle" onclick="toggle()">></button>
+<button class="btn btn_stop" button id="interrupt" onclick="interrupt()">Stop</button>
 </div>
 <div class="col-md-5 col-md-offset-2 blog-sidebar">
   <div class="sidebar-module">
@@ -28,7 +28,7 @@
       <%= render "pomodoros/form" %>
     </div>
     <div class="new-pomodoro">
-      <%= render "pomodoros/save" %>
+      <%= render "pomodoros/issue" %>
     </div>
   </div>
 </div>

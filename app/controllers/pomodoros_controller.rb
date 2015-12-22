@@ -20,10 +20,6 @@ class PomodorosController < ApplicationController
 		render text: "Pomodoro saved"
 	end
 
-  def issue
-    @pomodoro = Pomodoro.new(issue_params)
-  end
-
 	def create
 		p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
