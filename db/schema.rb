@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727083100) do
+ActiveRecord::Schema.define(version: 20160128073129) do
 
   create_table "pomodoros", force: :cascade do |t|
     t.integer  "user_id"
@@ -23,21 +23,22 @@ ActiveRecord::Schema.define(version: 20150727083100) do
 
   add_index "pomodoros", ["user_id"], name: "index_pomodoros_on_user_id"
 
-  create_table "project", force: :cascade do |t|
+  create_table "projects", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "project", ["user_id"], name: "index_project_on_user_id"
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
 
-  create_table "task", force: :cascade do |t|
+  create_table "tasks", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "project_id"
   end
 
-  add_index "task", ["user_id"], name: "index_task_on_user_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
