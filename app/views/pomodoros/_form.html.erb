@@ -3,14 +3,14 @@
 <table class="table">
 <tr>
 	<th class= "col-sm-1"> Project </th>
-	<th class= "col-sm-1"> Issue </th>
+	<th class= "col-sm-1"> Task </th>
 	<th class= "col-sm-1"> Date / Time </th>
 </tr>
 
 <% @pomodoros.each do |pomodoro| %>
 <tr>
 	<td><%= pomodoro.project %></td>
-	<td><%= pomodoro.issue %></td>
+	<td><%= pomodoro.task %></td>
 	<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
 </tr>
 <% end %>

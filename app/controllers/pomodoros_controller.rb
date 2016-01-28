@@ -21,7 +21,7 @@ class PomodorosController < ApplicationController
 	end
 
 	def create
-		p = Pomodoro.new(pomodoro_params)
+		p = Pomodoro.new(project_params)
 		p.user = current_user
 		p.save
 		redirect_to root_url
@@ -29,15 +29,15 @@ class PomodorosController < ApplicationController
 
 	private
 	def pomodoro_params
-		params.require(:pomodoro).permit(:project, :issue)
+		params.require(:pomodoro).permit(:project, :task)
 	end
 
   def project_params
     params.permit(:project)
   end
 
-  def issue_params
-    params.permit(:issue)
+  def task_params
+    params.permit(:task)
   end
 end
 
