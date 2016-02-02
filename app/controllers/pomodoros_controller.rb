@@ -21,7 +21,7 @@ class PomodorosController < ApplicationController
 	end
 
 	def create
-		p = Pomodoro.new(project_params)
+		p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
 		p.save
 		redirect_to root_url

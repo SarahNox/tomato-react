@@ -24,10 +24,10 @@ var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
-function toggleDiv() {
-  $(".new-pomodoro").toggle();
-  $(".daily-pomodoro").toggle();
-}
+// function toggleDiv() {
+//   $(".new-pomodoro").toggle();
+//   $(".daily-pomodoro").toggle();
+// }
 
 function toggle() {
   if (!isTimerOn){
@@ -46,6 +46,7 @@ function countdown() {
     if(time == 0) {
       if(isTomatoOn) { 
         end();
+        // then display saved project/task
       } else {
         stop();
       }
