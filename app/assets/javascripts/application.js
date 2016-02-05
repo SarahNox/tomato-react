@@ -78,7 +78,7 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
-  toggleDiv();
+  // toggleDiv();
 } 
 
 function interrupt() {

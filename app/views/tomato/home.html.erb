@@ -19,16 +19,12 @@
   <div class="sidebar-module">
     <div class="daily-pomodoro">
       <div class="headline">
-        <% if logged_in? %>
-        <span data-tooltip aria-haspopup="true" class="hip" title="Projectname"> + </span>
+        <% if @projects.to_s.empty? %>
+        <span data-tooltip aria-haspopup="true" class="hip" title="Projectname">
         <% else %>
-        <span class=" "> </span>
+        <span class="hop"> tada? </span>
         <% end %>
       </div>
-      <%= render "pomodoros/form" %>
-    </div>
-    <div class="new-pomodoro">
-      <%= render "pomodoros/task" %>
     </div>
   </div>
 </div>

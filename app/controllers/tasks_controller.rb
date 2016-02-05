@@ -1,17 +1,13 @@
 class TasksController < ApplicationController
   def new
     @task = Task.new
-  end
-
-  def save
-    t = Task.new
-    t.save
-    render text: "Task saved"
+    @project = Project.find(params[:project_id])
   end
 
   def create
     t = Task.new(task_params)
     t.user = current_user
+    t.project = Project.find(params[:project_id])
     t.save
     redirect_to root_url
   end
