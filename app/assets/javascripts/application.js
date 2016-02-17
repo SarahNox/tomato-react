@@ -24,11 +24,6 @@ var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
-function toggleDiv() {
-  $(".new-pomodoro").toggle();
-  $(".daily-pomodoro").toggle();
-}
-
 function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
@@ -77,7 +72,8 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
-  toggleDiv();
+  $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
+  setInterval(updateTimerDisplay, almostASecondInMiliseconds);
 } 
 
 function interrupt() {

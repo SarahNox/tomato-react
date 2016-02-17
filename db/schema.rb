@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128073129) do
+ActiveRecord::Schema.define(version: 20160201085142) do
 
   create_table "pomodoros", force: :cascade do |t|
     t.integer  "user_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160128073129) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160128073129) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "project_id"
+    t.string   "name"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"

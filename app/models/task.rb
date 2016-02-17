@@ -1,8 +1,6 @@
 class Task < ActiveRecord::Base
-	has_many :pomodoros
+	has_many :pomodoros  # , :through => :project_id
   belongs_to :project
- #  has_one :pomodoro, :through => :project
- #  validates :project, presence: true, length: { maximum: 50 }
- #  validates :user, presence: true
-
+  belongs_to :user
+  belongs_to :project_id
 end
