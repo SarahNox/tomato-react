@@ -4,7 +4,8 @@ class TomatoController < ApplicationController
 		if !logged_in?
 			destroy
 		else 
-      @projects = Project.new
+      @projects = current_user.projects
+      @tasks = current_user.tasks
 			@pomodoro = Pomodoro.new
 			@pomodoros = Pomodoro.daily_pomodoros(current_user)
 		end

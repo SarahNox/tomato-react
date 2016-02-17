@@ -78,6 +78,8 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
+  $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
+  setInterval(updateTimerDisplay, almostASecondInMiliseconds);
   // toggleDiv();
 } 
 

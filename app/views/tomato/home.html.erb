@@ -20,17 +20,17 @@
     <div class="daily-pomodoro">
       <div class="headline">
         <% if @projects.to_s.empty? %>
-        <span data-tooltip aria-haspopup="true" class="hip" title="Projectname">
+        ...
         <% else %>
-        <span class="hop"> tada? </span>
-        <% end %>
-      </div>
+        <a href="/projects/new"
+        <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+      </a>
+      <% end %>
     </div>
+    <%= render "tomato/form" %>
   </div>
 </div>
-
-
-
+</div>
 
 
 
