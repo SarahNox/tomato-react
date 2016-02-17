@@ -24,11 +24,6 @@ var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
-// function toggleDiv() {
-//   $(".new-pomodoro").toggle();
-//   $(".daily-pomodoro").toggle();
-// }
-
 function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
@@ -46,7 +41,6 @@ function countdown() {
     if(time == 0) {
       if(isTomatoOn) { 
         end();
-        // then display saved project/task
       } else {
         stop();
       }
@@ -80,7 +74,6 @@ function stop() {
   updateTimerDisplay();
   $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  // toggleDiv();
 } 
 
 function interrupt() {

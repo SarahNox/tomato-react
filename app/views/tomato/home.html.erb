@@ -22,14 +22,14 @@
         <% if @projects.to_s.empty? %>
         ...
         <% else %>
-        <a href="/projects/new"
+        <%= link_to new_project_path do %>
         <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
-      </a>
-      <% end %>
+        <% end %>
+        <% end %>
+      </div>
+      <%= render "tomato/form" %>
     </div>
-    <%= render "tomato/form" %>
   </div>
-</div>
 </div>
 
 

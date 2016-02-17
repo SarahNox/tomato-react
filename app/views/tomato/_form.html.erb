@@ -9,7 +9,7 @@
       <div class="task-list">
         <% project.tasks.each do |task| %>  
           <p class="task-item"> 
-            <img src="/assets/tomato_middle.png"> <%= task.name %> <p>
+            <%= image_tag("tomato_middle.png") %> <%= task.name %> <p>
         <% end %> 
       </div> 
     <% end %> 
