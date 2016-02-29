@@ -180,6 +180,14 @@ h8, .h8 {
   padding-bottom: 10px;
 }
 
+.col-sm-5 {
+  height: 700px;
+}
+
+.done {
+  padding-top: 150px;
+}
+
 .round-button {
     margin-left: 90px;
     display:block;
@@ -298,6 +306,10 @@ p {
     width: 100%;
     text-align: left;
     font-size: 130%;
+}
+
+.image_tag {
+  display: none;
 }
 
 .button2 {

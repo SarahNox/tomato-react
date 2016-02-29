@@ -1,9 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-  <%= render "pomodoros/save" %>
-</html>
+<div class="col-sm-5 blog-main">
+  <script>
+  $(function() {
+    $(".dial").knob();
+  });
+  </script>
+  <div class="circular-bar">
+    <input class="dial" data-width="450" data-height="450" value="20">
+    <div class="circular-bar-content"
+    <strong></strong>
+    <div id="countdown">Tomato</div>
+    <label></label>
+  </div>
+</div>
+<button class="btn btn_start" button id="toggle" onclick="toggle()">></button>
+<button class="btn btn_stop" button id="interrupt" onclick="interrupt()">Stop</button>
+</div>
+<div class="col-md-5 col-md-offset-2 blog-sidebar">
+  <div class="sidebar-module">
+    <div class="daily-pomodoro">
+      <body class="pomodoros">
+        <%= form_for(@pomodoro, url: project_task_pomodoros_url) do |f| %>
+        <div class="field">
+          <%= f.text_field :project_name, :value => @project.name %>
+          <%= f.text_field :task_name, :value => @task.name %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

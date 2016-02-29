@@ -9,8 +9,8 @@
 
 <% @pomodoros.each do |pomodoro| %>
 <tr>
-	<td><%= pomodoro.project %></td>
-	<td><%= pomodoro.task %></td>
+	<td><%= pomodoro.project.name %></td>
+	<td><%= pomodoro.task.name %></td>
 	<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
 </tr>
 <% end %>

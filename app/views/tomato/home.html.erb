@@ -1,30 +1,14 @@
 <div class="col-sm-5 blog-main">
-  <script>
-  $(function() {
-    $(".dial").knob();
-  });
-  </script>
-  <div class="circular-bar">
-    <input class="dial" data-width="450" data-height="450" value="20">
-    <div class="circular-bar-content"
-    <strong></strong>
-    <div id="countdown">Tomato</div>
-    <label></label>
-  </div>
+  <div class="done">
+  <%= image_tag("tomato-medium.png") %> 
 </div>
-<button class="btn btn_start" button id="toggle" onclick="toggle()">></button>
-<button class="btn btn_stop" button id="interrupt" onclick="interrupt()">Stop</button>
 </div>
 <div class="col-md-5 col-md-offset-2 blog-sidebar">
   <div class="sidebar-module">
     <div class="daily-pomodoro">
       <div class="headline">
-        <% if @projects.to_s.empty? %>
-        ...
-        <% else %>
         <%= link_to new_project_path do %>
         <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
-        <% end %>
         <% end %>
       </div>
       <%= render "tomato/form" %>

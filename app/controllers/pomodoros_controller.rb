@@ -12,19 +12,17 @@ class PomodorosController < ApplicationController
 
 	def new
 		@pomodoro = Pomodoro.new
-	end
-
-	def save
-		p = Pomodoro.new
-		p.save
-		render text: "Pomodoro saved"
+    @project = Project.find(params[:project_id])
+    @task = Task.find(params[:task_id])
 	end
 
 	def create
 		p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
+    p.task = Task.find(params[:task_id])
+    p.project = Project.find(params[:project_id])
 		p.save
-		redirect_to root_url
+		redirect_to project_task_pomodoros_url
 	end
 
 	private
@@ -32,12 +30,5 @@ class PomodorosController < ApplicationController
 		params.require(:pomodoro).permit(:project, :task)
 	end
 
-  def project_params
-    params.permit(:project)
-  end
-
-  def task_params
-    params.permit(:task)
-  end
 end
 
