@@ -1,12 +1,8 @@
-  <div class="col-md-5 col-md-offset-1">
-    <body class="pomodoros">
+<body class="pomodoros">
 
-      <%= form_for(@pomodoro) do |f| %>
-      <div class="field">
-        <h3> SET NEW PROJECT </h3>
-        <%= f.text_field :project %>
-      </div>
-      <% end %>
-    </div>
+  <%= form_for(@pomodoro, url: project_task_pomodoros_url(:project_id, :task_id)) do |f| %>
+  <div class="field">
+     <%= f.text_field :task_id, :value => @task.id %>
   </div>
-
+  <% end %>
+</div>

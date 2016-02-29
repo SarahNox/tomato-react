@@ -28,7 +28,7 @@ function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
     countdown();
-    document.getElementById("toggle").innerHTML = " % ";
+    document.getElementById("toggle").innerHTML = " II ";
   } else {
     isTimerOn = false;
     clearInterval(interval);
@@ -72,8 +72,9 @@ function stop() {
   alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
-  $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
+  document.getElementById("new_pomodoro").submit();
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
+  $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
 } 
 
 function interrupt() {

@@ -1,13 +1,6 @@
 class ProjectsController < ApplicationController
-
   def new
     @project = Project.new
-  end
-
-  def save
-    pro = Project.new
-    pro.save
-    render text: "Project saved"
   end
 
   def create

@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-
-  resources :pomodoros 
+ 
   resources :users
 
 
@@ -16,8 +15,10 @@ Rails.application.routes.draw do
   get 'users/:id/edit_password', to: 'users#edit_password', as: 'password_edit'
   
   resources :projects , only: [:new, :create] do |projects|
-    resources :tasks, only: [:new, :create]
+    resources :tasks, only: [:new, :create] do |tasks|
+      resources :pomodoros
   end
+end
 
   resources :password_resets 
 end
