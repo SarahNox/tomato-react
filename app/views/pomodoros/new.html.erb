@@ -8,6 +8,7 @@
     <input class="dial" data-width="450" data-height="450" value="20">
     <div class="circular-bar-content"
     <strong></strong>
+    <div class="pomodoro_task_name"> <%= @task.name %> </div>
     <div id="countdown">Tomato</div>
     <label></label>
   </div>
@@ -21,8 +22,8 @@
       <body class="pomodoros">
         <%= form_for(@pomodoro, url: project_task_pomodoros_url) do |f| %>
         <div class="field">
-          <%= f.text_field :project_name, :value => @project.name %>
-          <%= f.text_field :task_name, :value => @task.name %>
+          <%= f.hidden_field :project_name, :value => @project.name %>
+          <%= f.hidden_field :task_name, :value => @task.name %>
         </div>
         <% end %>
       </div>

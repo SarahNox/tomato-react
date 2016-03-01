@@ -237,8 +237,6 @@ input {
 #countdown {
     width: 400px;
     margin: auto;
-    margin-bottom: 50px;
-    margin-top: -280px;
     border-style: none;
     border-width: 1px;
     border-radius: 0px;
@@ -310,6 +308,10 @@ p {
 
 .image_tag {
   display: none;
+}
+
+.pomodoro_task_name {
+  font-size: 30px;
 }
 
 .button2 {
@@ -429,7 +431,7 @@ input.dial {
   text-align: center;
   .circular-bar-content{
     margin-bottom: 70px;
-    margin-top: -95px;
+    margin-top: -320px;
     text-align: center;
     strong{
       display: block;
