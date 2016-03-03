@@ -1,22 +1,27 @@
 <div class="col-sm-5 blog-main">
   <div class="done">
-  <%= image_tag("tomato-medium.png") %> 
-</div>
+    <%= image_tag("tomato-medium.png") %> 
+    <h9> Pomodoro completed </h9> 
+  </div>
 </div>
 <div class="col-md-5 col-md-offset-2 blog-sidebar">
   <div class="sidebar-module">
     <div class="daily-pomodoro">
-  <h3> Daily done Pomodoros </h3>
-<!DOCTYPE html>
-<html>
-<head>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
-</head>
-<body class="pomodoros">
-	<%= render "pomodoros/form" %>
-</body>
-</html>
-</div>
-</div>
-</div>
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+      </head>
+      <div class="headline">
+        <%= link_to new_project_path do %>
+        <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+        <% end %>
+      </div>
+      <body class="pomodoros">
+        <%= render "pomodoros/form" %>
+      </body>
+      </html>
+    </div>
+  </div>
+</div> 

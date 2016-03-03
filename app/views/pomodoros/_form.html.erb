@@ -1,18 +1,23 @@
 <nav class="pagination">
-	<%= paginate @pomodoros %>
-<table class="table">
-<tr>
-	<th class= "col-sm-1"> Project </th>
-	<th class= "col-sm-1"> Task </th>
-	<th class= "col-sm-1"> Date / Time </th>
-</tr>
-
-<% @pomodoros.each do |pomodoro| %>
-<tr>
-	<td><%= pomodoro.project.name %></td>
-	<td><%= pomodoro.task.name %></td>
-	<td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
-</tr>
-<% end %>
-</table>
-</nav>
+  <div class="project-list">
+    <% @projects.each do |project| %>  
+    <div class="project-name"> 
+      <%= link_to new_project_task_path(project.id), style: 'color:#000' do %>
+      <%= project.name %>
+      <% end %>
+    </div>
+    <div class="task-list">
+      <% project.tasks.each do |task| %>  
+      <p class="task-item"> 
+        <%= link_to new_project_task_pomodoro_path(project.id, task.id), style: 'color:#000' do %>
+        <% task.pomodoros.count.times do %>
+        <%= image_tag("tomato_middle.png") %>
+        <% end %> 
+        <%= task.name %> 
+      </p>
+      <% end %> 
+      <% end %>
+    </div> 
+    <% end %> 
+  </div>
+</div>

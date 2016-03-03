@@ -4,6 +4,8 @@ class PomodorosController < ApplicationController
 
 	def index
 		@pomodoros = Pomodoro.daily_pomodoros(current_user)
+    @projects = current_user.projects
+    @tasks = current_user.tasks
 	end
 
 	def history
@@ -14,6 +16,9 @@ class PomodorosController < ApplicationController
 		@pomodoro = Pomodoro.new
     @project = Project.find(params[:project_id])
     @task = Task.find(params[:task_id])
+    @pomodoros = Pomodoro.daily_pomodoros(current_user)
+    @projects = current_user.projects
+    @tasks = current_user.tasks
 	end
 
 	def create

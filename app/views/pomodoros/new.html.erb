@@ -26,6 +26,14 @@
           <%= f.hidden_field :task_name, :value => @task.name %>
         </div>
         <% end %>
+        <div class="headline">
+          <%= link_to new_project_path do %>
+          <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+          <% end %>
+        </div>
+        <body class="pomodoros">
+          <%= render "pomodoros/form" %>
+        </body>
       </div>
     </div>
   </div>

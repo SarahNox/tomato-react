@@ -69,7 +69,6 @@ function stop() {
   isTimerOn = false;
   clearInterval(interval);
   document.getElementById("toggle").innerHTML = ">";
-  alert("Pause is over!"); 
   time = tomatoTime; 
   updateTimerDisplay();
   document.getElementById("new_pomodoro").submit();
