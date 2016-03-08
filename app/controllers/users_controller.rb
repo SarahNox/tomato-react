@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @pomodoros = current_user.pomodoros.page(params[:page]).per(10).order("created_at DESC")
+    @project = Project.new
+    @pomodoro = Pomodoro.new
+    @task = Task.new
+    @projects = current_user.projects
+    @tasks = current_user.tasks
   end
 
   def create

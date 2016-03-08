@@ -7,17 +7,24 @@
 </html>
 <html>
 <body>
-	<body class="pomodoros">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-md-offset-0">
+<div class="col-sm-5 blog-main">
+  <div class="done">
           <h4> Let's get </h4>
           <h5> started </h5>
-          <h6> SET NEW TASK </h6>
+          <h6> SET NEW PROJECT </h6>
           <%= link_to '+', new_project_path, class: 'round-button' %>
-			</div>
+  </div>
+</div>
+<div class="col-md-5 col-md-offset-2 blog-sidebar">
+  <div class="sidebar-module">
+    <div class="daily-pomodoro">
+      <div class="headline">
+        <%= link_to new_project_path do %>
+        <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+        <% end %>
+      </div>
+        <%= render "shared/form" %>
 		</div>
 	</div>
 </body>
 </html>
-

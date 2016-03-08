@@ -1,6 +1,11 @@
 class ProjectsController < ApplicationController
   def new
     @project = Project.new
+    @pomodoro = Pomodoro.new
+    @task = Task.new
+    @pomodoros = Pomodoro.daily_pomodoros(current_user)
+    @projects = current_user.projects
+    @tasks = current_user.tasks
   end
 
   def create

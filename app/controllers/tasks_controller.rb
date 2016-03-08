@@ -2,6 +2,10 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @project = Project.find(params[:project_id])
+    @pomodoro = Pomodoro.new
+    @pomodoros = Pomodoro.daily_pomodoros(current_user)
+    @projects = current_user.projects
+    @tasks = current_user.tasks
   end
 
   def create
