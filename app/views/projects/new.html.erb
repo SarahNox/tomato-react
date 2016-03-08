@@ -1,11 +1,23 @@
-<div class="col-md-5 col-md-offset-1">
-  <body class="projects">
+<div class="col-sm-5 blog-main">
+  <div class="done">
     <%= form_for(@project) do |f| %>
     <div class="field">
       <h3> SET PROJECT </h3>
       <%= f.text_field :name %>
     </div>
     <% end %>
+  </div>
+</div>
+<div class="col-md-5 col-md-offset-2 blog-sidebar">
+  <div class="sidebar-module">
+    <div class="daily-pomodoro">
+      <div class="headline">
+        <%= link_to new_project_path do %>
+        <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+        <% end %>
+      </div>
+      <%= render "shared/form" %>
+    </div>
   </div>
 </div>
 
