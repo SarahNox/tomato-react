@@ -30,6 +30,15 @@ class PomodorosController < ApplicationController
 		redirect_to project_task_pomodoros_url
 	end
 
+  def show
+    @pomodoro = Pomodoro.new
+    @project = Project.find(params[:project_id])
+    @task = Task.find(params[:task_id])
+    @pomodoros = Pomodoro.daily_pomodoros(current_user)
+    @projects = current_user.projects
+    @tasks = current_user.tasks
+  end
+
 	private
 	def pomodoro_params
 		params.require(:pomodoro).permit(:project, :task)
