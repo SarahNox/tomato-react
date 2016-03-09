@@ -100,7 +100,7 @@
                     min: this.$.data('min') !== undefined ? this.$.data('min') : 0,
                     max: this.$.data('max') !== undefined ? this.$.data('max') : 20,
                     stopper: true,
-                    readOnly: this.$.data('readonly') || (this.$.attr('readonly') === 'readonly'),
+                    readOnly: this.$.data('readonly') || (this.$.attr('readonly') === 'readonly' ),
 
                     // UI
                     cursor: this.$.data('cursor') === true && 30
