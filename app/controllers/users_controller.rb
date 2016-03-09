@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to the Pomodoro-Clock!"
-      redirect_to new_project_url
+      redirect_to user_url(@user.id)
     else
       render 'new'
     end
