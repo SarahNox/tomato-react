@@ -1,0 +1,29 @@
+<div class="col-sm-5 blog-main">
+  <div class="done">
+    <%= image_tag("sliced_tomato.png") %> 
+    <h9> Pomodoro spoiled </h9> 
+  </div>
+</div>
+<div class="col-md-5 col-md-offset-2 blog-sidebar">
+  <div class="sidebar-module">
+    <div class="daily-pomodoro">
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+      </head>
+      <div class="headline">
+        <%= link_to new_project_path do %>
+        <span class="button2" data-tooltip aria-haspopup="true" title="new project">+</span>
+        <% end %>
+      </div>
+      <body class="pomodoros">
+        <%= render "shared/form" %>
+      </body>
+      </html>
+    </div>
+  </div>
+</div> 
+
+

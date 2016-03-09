@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/new'
   root 'tomato#home'
   get 'pomodoros/history'
+  get 'pomodoros/spoiled'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

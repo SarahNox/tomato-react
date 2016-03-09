@@ -78,8 +78,7 @@ function stop() {
 } 
 
 function interrupt() {
-  alert("Pomodoro destroyed"); 
-  location.reload();
+  window.location.href = '../pomodoros/spoiled';
 }
 
 function updateTimerDisplay() {
