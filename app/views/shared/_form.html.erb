@@ -10,9 +10,12 @@
       <% project.tasks.each do |task| %>  
       <p class="task-item"> 
         <%= link_to new_project_task_pomodoro_path(project.id, task.id), style: 'color:#000' do %>
-        <% task.pomodoros.count.times do %>
+        <% task.pomodoros.where(success: true).count.times do %>
         <%= image_tag("tomato_middle.png") %>
-        <% end %> 
+        <% end %>
+        <% task.pomodoros.where(success: false).count.times do %>
+        <%= image_tag("tomato_middle_spoiled.png") %>
+        <% end %>
         <%= task.name %> 
       </p>
       <% end %> 

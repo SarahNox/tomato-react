@@ -21,19 +21,21 @@ class PomodorosController < ApplicationController
     @tasks = current_user.tasks
 	end
 
-	def create
-		p = Pomodoro.new(pomodoro_params)
+	def create 
+    p = Pomodoro.new(pomodoro_params)
 		p.user = current_user
     p.task = Task.find(params[:task_id])
     p.project = Project.find(params[:project_id])
 		p.save
-		redirect_to project_task_pomodoros_url
+    if pomodoro_params[:success] == "true"
+      redirect_to project_task_pomodoros_url
+    else
+      redirect_to pomodoros_spoiled_url
+    end
 	end
 
-  def show
+  def spoiled
     @pomodoro = Pomodoro.new
-    @project = Project.find(params[:project_id])
-    @task = Task.find(params[:task_id])
     @pomodoros = Pomodoro.daily_pomodoros(current_user)
     @projects = current_user.projects
     @tasks = current_user.tasks
@@ -41,7 +43,7 @@ class PomodorosController < ApplicationController
 
 	private
 	def pomodoro_params
-		params.require(:pomodoro).permit(:project, :task)
+		params.require(:pomodoro).permit(:project, :task, :success)
 	end
 
 end

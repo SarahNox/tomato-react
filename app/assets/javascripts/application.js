@@ -17,8 +17,8 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 20; 
+var pauseTime = 10;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
@@ -58,6 +58,7 @@ function end() {
   document.getElementById("countdown").innerHTML = "Pause!";
   document.getElementById("toggle").innerHTML = ":-)";
   document.getElementById("toggle").disabled = true;
+  document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
   $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
@@ -69,16 +70,12 @@ function stop() {
   isTomatoOn = true;
   isTimerOn = false;
   clearInterval(interval);
-  document.getElementById("toggle").innerHTML = ">";
-  time = tomatoTime; 
-  updateTimerDisplay();
   document.getElementById("new_pomodoro").submit();
-  setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  $('.dial').val(time).trigger('configure', {'max': tomatoTime , 'fgColor' : "#ff0000" });
 } 
 
 function interrupt() {
-  window.location.href = '../pomodoros/spoiled';
+  document.getElementById('pomodoro_success').value = false;
+  document.getElementById('new_pomodoro').submit();
 }
 
 function updateTimerDisplay() {
