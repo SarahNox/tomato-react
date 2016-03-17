@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Pomodoros", type: :request do
 
     before do 
-      @user = User.create! name: "abcdef", email: "abc@def.com" ,  password: "abcdef" , password_confirmation: "abcdef" 
+      @user = User.create! name: "abcdef", email: "abc@def.com" ,  password: "abcdefgh" , password_confirmation: "abcdefgh" 
       Timecop.travel(Date.today - 1)
       @project1 = Project.create!(name: "Search for yaks", user: @user)
       @task1 = Task.create!(name: "found them at the shelter", project: @project1, user: @user)
