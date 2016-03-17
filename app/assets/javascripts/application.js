@@ -17,8 +17,8 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 20; 
+var pauseTime = 10;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
