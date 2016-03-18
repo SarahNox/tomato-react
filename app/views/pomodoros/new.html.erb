@@ -23,10 +23,9 @@
     <div class="daily-pomodoro">
       <body class="pomodoros">
         <%= form_for(@pomodoro, url: project_task_pomodoros_url) do |f| %>
-        <div class="field">
           <%= f.hidden_field :project_name, :value => @project.name %>
           <%= f.hidden_field :task_name, :value => @task.name %>
-        </div>
+          <%= f.hidden_field :success %>
         <% end %>
         <div class="headline">
           <%= link_to new_project_path do %>

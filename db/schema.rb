@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307070128) do
+ActiveRecord::Schema.define(version: 20160316111140) do
 
   create_table "pomodoros", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.text     "project"
     t.text     "task"
     t.integer  "project_id"
     t.integer  "task_id"
+    t.boolean  "success",    default: true
   end
 
   add_index "pomodoros", ["user_id"], name: "index_pomodoros_on_user_id"
