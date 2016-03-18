@@ -27,7 +27,7 @@ class PomodorosController < ApplicationController
     p.task = Task.find(params[:task_id])
     p.project = Project.find(params[:project_id])
 		p.save
-    if pomodoro_params[:success] == "true"
+    if p.success?
       redirect_to project_task_pomodoros_url
     else
       redirect_to pomodoros_spoiled_url
