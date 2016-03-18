@@ -15,9 +15,8 @@ RSpec.describe "Pomodoros", type: :request do
     end
 
   describe "GET /pomodoros" do
-
     it "returns all pomodoros" do
-      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdef"}}
+      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdefgh"}}
       get project_task_pomodoros_path(@project1, @task1)
 
       expect(response).to have_http_status(200)
@@ -29,9 +28,8 @@ RSpec.describe "Pomodoros", type: :request do
   end
 
   describe "GET /pomodoros/new" do
-
     it "should display pomodoros from the past" do
-      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdef"}}
+      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdefgh"}}
       get new_project_task_pomodoro_path(@project2, @task2)
 
       expect(response).to have_http_status(200)
@@ -42,7 +40,7 @@ RSpec.describe "Pomodoros", type: :request do
 
   describe "GET /pomodoros/history" do
     it "returns pomodoro history" do
-      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdef"}} 
+      post login_path, {"session" => {"email" => "abc@def.com", "password" => "abcdefgh"}} 
       get pomodoros_history_path
 
       expect(response).to have_http_status(200)
