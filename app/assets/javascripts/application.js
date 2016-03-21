@@ -24,6 +24,7 @@ var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
+
 function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
@@ -57,13 +58,12 @@ function end() {
   isTimerOn = false;
   document.getElementById("countdown").innerHTML = "Pause!";
   document.getElementById("toggle").innerHTML = ":-)";
-  document.getElementById("toggle").disabled = true;
   document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
-  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
+  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  countdown();
+  // countdown();
 }
 
 function stop() {

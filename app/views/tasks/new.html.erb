@@ -3,7 +3,7 @@
     <%= form_for(@task, url: project_tasks_url(@project)) do |f| %>
     <div class="field">
       <h3> SET TASK </h3>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, :required => true %>
     </div>
     <% end %>
   </div>
