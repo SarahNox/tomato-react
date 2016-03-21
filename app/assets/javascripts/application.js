@@ -61,9 +61,9 @@ function end() {
   document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
-  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "04B45F" });
+  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  // countdown();
+  countdown();
 }
 
 function stop() {
