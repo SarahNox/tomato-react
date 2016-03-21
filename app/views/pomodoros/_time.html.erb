@@ -2,16 +2,24 @@
   <%= paginate @pomodoros %>
 <table class="table">
 <tr>
+  <th class= "col-sm-1"> Success </th>
   <th class= "col-sm-1"> Project </th>
   <th class= "col-sm-1"> Task </th>
-  <th class= "col-sm-1"> Date / Time </th>
+  <th class= "col-sm-3"> Date / Time </th>
 </tr>
 
 <% @pomodoros.each do |pomodoro| %>
 <tr>
+  <td>
+    <% if pomodoro.success == true %>
+      <%= image_tag("tomato_middle.png") %>
+    <% else %>
+      <%= image_tag("tomato_middle_spoiled.png") %>
+    <% end %>
+  </td>
   <td><%= pomodoro.project.name %></td>
   <td><%= pomodoro.task.name %></td>
-  <td><%= pomodoro.created_at.in_time_zone("Berlin").to_s(:short) %></td>
+  <td><%= pomodoro.created_at.strftime("%F %H:%M") %></td>
 </tr>
 <% end %>
 </table>

@@ -17,12 +17,19 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 20; 
+var pauseTime = 10;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
+
+if (window.webkitNotifications.checkPermission() == 0) {
+    // notfication
+} else {
+    window.webkitNotifications.requestPermission(function(){});
+}
+
 
 function toggle() {
   if (!isTimerOn){
@@ -57,13 +64,12 @@ function end() {
   isTimerOn = false;
   document.getElementById("countdown").innerHTML = "Pause!";
   document.getElementById("toggle").innerHTML = ":-)";
-  document.getElementById("toggle").disabled = true;
   document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
-  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
+  $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  countdown();
+  // countdown();
 }
 
 function stop() {
