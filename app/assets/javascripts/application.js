@@ -24,12 +24,6 @@ var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
-if (window.webkitNotifications.checkPermission() == 0) {
-    // notfication
-} else {
-    window.webkitNotifications.requestPermission(function(){});
-}
-
 
 function toggle() {
   if (!isTimerOn){
