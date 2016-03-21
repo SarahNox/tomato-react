@@ -3,7 +3,9 @@
     <% @projects.each do |project| %>  
     <div class="project-name"> 
       <%= link_to new_project_task_path(project.id), style: 'color:#000' do %>
-      <%= project.name %>
+      <span data-tooltip aria-haspopup="true" title="add new task">
+        <%= project.name %>
+      </span>
       <% end %>
     </div>
     <div class="task-list">
@@ -16,7 +18,9 @@
         <% task.pomodoros.where(success: false).count.times do %>
         <%= image_tag("tomato_middle_spoiled.png") %>
         <% end %>
-        <%= task.name %> 
+        <span data-tooltip aria-haspopup="true" title="add new pomodoro">
+          <%= task.name %> 
+        </span>
       </p>
       <% end %> 
       <% end %>
