@@ -25,6 +25,24 @@ var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
 
+function notify() {
+  if (!("Notification" in window)) {
+    console.log("This browser does not support desktop notification");
+  }
+  else if (Notification.permission === "granted") {
+    console.log("Permissions granted");
+  }
+  else if (Notification.permission !== 'denied' || Notification.permission === "default") {
+    console.log("Permissions denied, asking");
+    Notification.requestPermission(function (permission) {
+      if (permission === "granted") {
+        console.log(" Got the permissions!");
+      }
+    });
+  }
+}
+notify();
+
 function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
@@ -57,13 +75,15 @@ function end() {
   isTomatoOn = false;
   isTimerOn = false;
   document.getElementById("countdown").innerHTML = "Pause!";
-  document.getElementById("toggle").innerHTML = ":-)";
+  document.getElementById("toggle").innerHTML = ">";
   document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
+  new Notification('Pomodoro finished', {
+  body: 'Whenever you are ready start with your break'
+});
   $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  countdown();
 }
 
 function stop() {
