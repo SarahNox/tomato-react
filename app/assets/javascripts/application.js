@@ -25,6 +25,17 @@ var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
 
+function askForPermission() {
+  if (!("Notification" in window)) {}
+  else if (Notification.permission === "granted") {}
+  else if (Notification.permission !== 'denied' || Notification.permission === "default") {
+    Notification.requestPermission(function (permission) {
+      if (permission === "granted") {}
+    });
+  }
+}
+askForPermission();
+
 function toggle() {
   if (!isTimerOn){
     isTimerOn = true;
@@ -57,13 +68,16 @@ function end() {
   isTomatoOn = false;
   isTimerOn = false;
   document.getElementById("countdown").innerHTML = "Pause!";
-  document.getElementById("toggle").innerHTML = ":-)";
+  document.getElementById("toggle").innerHTML = ">";
   document.getElementById("interrupt").disabled = true;
   clearInterval(interval);
   time = pauseTime;
+  new Notification('Pomodoro finished', {
+  body: 'Whenever you are ready start with your break',
+  icon: 'https://raw.githubusercontent.com/SarahNox/tomato/master/app/assets/images/tomato-medium.png'
+});
   $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
-  countdown();
 }
 
 function stop() {
