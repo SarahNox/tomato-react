@@ -26,12 +26,8 @@ var almostASecondInMiliseconds = 999;
 
 
 function askForPermission() {
-  if (!("Notification" in window)) {}
-  else if (Notification.permission === "granted") {}
-  else if (Notification.permission !== 'denied' || Notification.permission === "default") {
-    Notification.requestPermission(function (permission) {
-      if (permission === "granted") {}
-    });
+  if (Notification.permission !== 'denied' || Notification.permission === "default") {
+    Notification.requestPermission();
   }
 }
 askForPermission();
