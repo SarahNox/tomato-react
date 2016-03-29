@@ -17,15 +17,15 @@
 //= require_tree .
 
 var isTimerOn = false; 
-var tomatoTime = 1500; 
-var pauseTime = 300;
+var tomatoTime = 10; 
+var pauseTime = 3;
 var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
 
 
-function notify() {
+function askForPermission() {
   if (!("Notification" in window)) {
     console.log("This browser does not support desktop notification");
   }
@@ -41,7 +41,7 @@ function notify() {
     });
   }
 }
-notify();
+askForPermission();
 
 function toggle() {
   if (!isTimerOn){
@@ -80,7 +80,8 @@ function end() {
   clearInterval(interval);
   time = pauseTime;
   new Notification('Pomodoro finished', {
-  body: 'Whenever you are ready start with your break'
+  body: 'Whenever you are ready start with your break',
+  icon: 'https://raw.githubusercontent.com/SarahNox/tomato/master/app/assets/images/tomato-medium.png'
 });
   $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
