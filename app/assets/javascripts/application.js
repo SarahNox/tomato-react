@@ -26,18 +26,11 @@ var almostASecondInMiliseconds = 999;
 
 
 function askForPermission() {
-  if (!("Notification" in window)) {
-    console.log("This browser does not support desktop notification");
-  }
-  else if (Notification.permission === "granted") {
-    console.log("Permissions granted");
-  }
+  if (!("Notification" in window)) {}
+  else if (Notification.permission === "granted") {}
   else if (Notification.permission !== 'denied' || Notification.permission === "default") {
-    console.log("Permissions denied, asking");
     Notification.requestPermission(function (permission) {
-      if (permission === "granted") {
-        console.log(" Got the permissions!");
-      }
+      if (permission === "granted") {}
     });
   }
 }
