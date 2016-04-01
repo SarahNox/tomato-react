@@ -23,6 +23,8 @@ var time = tomatoTime;
 var interval;
 var isTomatoOn = true;
 var almostASecondInMiliseconds = 999;
+var allowedPauseTime = 120;
+var pomodoroTimeAtPause = 0;
 
 
 function askForPermission() {
@@ -33,18 +35,22 @@ function askForPermission() {
 askForPermission();
 
 function toggle() {
-  if (!isTimerOn){
-    isTimerOn = true;
+  if (!isTimerOn && pomodoroTimeAtPause == 0){
     countdown();
-    document.getElementById("toggle").innerHTML = " II ";
+  } else if (!isTimerOn) {
+    resume();
   } else {
-    isTimerOn = false;
-    clearInterval(interval);
-    document.getElementById("toggle").innerHTML = "Go";
+    pause();
   }
 }
 
 function countdown() {
+  isTimerOn = true;
+  document.getElementById("toggle").innerHTML = " II ";
+  document.getElementById("pause").style.visibility = "hidden";
+  if (interval != undefined) {
+    clearInterval(interval);
+  }
   interval = setInterval(function() {
     if(time == 0) {
       if(isTomatoOn) { 
@@ -56,6 +62,7 @@ function countdown() {
     }
     updateTimerDisplay(time);
     time--;
+    pomodoroTimeAtPause = time;
     $('.dial').val(time).trigger('change');
   }, almostASecondInMiliseconds); 
 }
@@ -69,15 +76,14 @@ function end() {
   clearInterval(interval);
   time = pauseTime;
   new Notification('Pomodoro finished', {
-  body: 'Whenever you are ready start with your break',
-  icon: 'https://raw.githubusercontent.com/SarahNox/tomato/master/app/assets/images/tomato-medium.png'
-});
+    body: 'Whenever you are ready start with your break',
+    icon: 'https://raw.githubusercontent.com/SarahNox/tomato/master/app/assets/images/tomato-medium.png'
+  });
   $('.dial').val(time).trigger('configure', {'max': pauseTime , 'fgColor' : "#04B45F" });
   setInterval(updateTimerDisplay, almostASecondInMiliseconds);
 }
 
 function stop() {
-  isTomatoOn = true;
   isTimerOn = false;
   clearInterval(interval);
   document.getElementById("new_pomodoro").submit();
@@ -88,8 +94,43 @@ function interrupt() {
   document.getElementById('new_pomodoro').submit();
 }
 
+function pause() {
+  clearInterval(interval);
+  document.getElementById("toggle").innerHTML = "Go";
+  document.getElementById("pause").style.visibility = "visible";
+  isTimerOn = false;
+  time = allowedPauseTime;
+  interval = setInterval(function() {
+    if(time == 0) {
+      if(isTomatoOn) { 
+        interrupt();
+      }
+      return;
+    }
+    updatePauseDisplay(time);
+    time--;
+  }, almostASecondInMiliseconds); 
+}
+
+
+function resume() {
+  isTomatoOn = true;
+  time = pomodoroTimeAtPause;
+  countdown();
+}
+
 function updateTimerDisplay() {
   var el = document.getElementById("countdown");
+  var minutes = Math.floor( time / 60 );
+  if (minutes < 10) minutes = '0' + minutes;
+  var seconds = time % 60;
+  if (seconds < 10) seconds = '0' + seconds;
+  var text = minutes + ':' + seconds;
+  el.innerHTML = text;
+}
+
+function updatePauseDisplay() {
+  var el = document.getElementById("pause");
   var minutes = Math.floor( time / 60 );
   if (minutes < 10) minutes = '0' + minutes;
   var seconds = time % 60;
