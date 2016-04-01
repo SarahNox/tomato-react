@@ -115,7 +115,6 @@ function pause() {
 
 function resume() {
   isTomatoOn = true;
-  isTimerOn = true;
   time = pomodoroTimeAtPause;
   countdown();
 }
