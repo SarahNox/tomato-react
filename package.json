@@ -1,0 +1,37 @@
+{
+  "name": "tomato_react",
+  "version": "1.0.0",
+  "description": "tomato with react countdown",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SarahNox/tomato-react.git"
+  },
+  "keywords": [
+    "tomato",
+    "with",
+    "react",
+    "countdown"
+  ],
+  "author": "Sarah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SarahNox/tomato-react/issues"
+  },
+  "homepage": "https://github.com/SarahNox/tomato-react#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babelify": "^7.3.0"
+  }
+}

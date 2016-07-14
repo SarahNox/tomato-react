@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'bootstrap-material-design'
 gem 'rails_12factor'
+gem 'react-rails'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '1.3.10'
 # Use SCSS for stylesheets
@@ -44,7 +45,7 @@ gem 'passenger'
 
 group :development , :test do
   gem 'rspec-rails' , '~> 3.0'
-  gem 'sqlite3-ruby', :require => 'sqlite3'
+  gem 'sqlite3', :require => 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
