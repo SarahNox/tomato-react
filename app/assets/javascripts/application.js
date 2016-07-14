@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require bootstrap-material-design
 //= require turbolinks
+//= require react
+//= require components
+//= require react_ujs
 //= require_tree .
+
 
 var isTimerOn = false; 
 var tomatoTime = 1500; 
