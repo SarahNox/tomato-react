@@ -19,7 +19,6 @@
 //= require react_ujs
 //= require_tree .
 
-
 var isTimerOn = false; 
 var tomatoTime = 1500; 
 var pauseTime = 300;
