@@ -1,24 +1,6 @@
 <div class="col-sm-5 blog-main">
-  <script>
-  $(function() {
-    $(".dial").knob({
-      "readOnly":true
-    });
-  });
-  </script>
-  <div class="circular-bar">
-    <input class="dial" data-width="450" data-height="450" value="1500">
-    <div class="circular-bar-content"
-    <strong></strong>
-    <div class="pomodoro_task_name"> <%= @task.name %> </div>
-    <div id="countdown">Tomato</div>
-    <%= react_component "Hello", name: "Tomato-User" %>
-    <label></label>
+    <%= react_component "Hello" %>
   </div>
-</div>
-<button class="btn btn_start" button id="toggle" onclick="toggle()">></button>
-<button class="btn btn_stop" button id="interrupt" onclick="interrupt()">Stop</button>
-</div>
 <div class="col-md-5 col-md-offset-2 blog-sidebar">
   <div class="sidebar-module">
     <div class="daily-pomodoro">
