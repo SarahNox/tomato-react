@@ -1,4 +1,3 @@
-
 var Circle = require('rc-progress').Circle;
 
 var SetIntervalMixin = {
